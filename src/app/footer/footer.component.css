@@ -1,0 +1,62 @@
+.footer{
+    background-color: teal;
+    padding: 10px 20px 10px 20px;
+    margin-top: 5px;
+}
+
+.mid-footer{
+    background-color: teal;
+    border-bottom: 2px bisque solid;
+}
+
+.mid-footer::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+.part1{
+    float: left;
+    width: 13.9%;
+}
+.part1 h4{
+    color: #302f2e;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.part1 a{
+    font-family: 'Baloo Tamma 2', cursive;
+    text-decoration: none;
+    color: black;
+}
+
+.part2{
+    float: left;
+    width: 20%;
+    padding-left: 2%;
+}
+.part2 h4{
+    color: #302f2e;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.part2 p{
+    font-family: 'Baloo Tamma 2', cursive;
+}
+
+.part3{
+    float: left;
+    width: 17%;
+}
+.part3 h4{
+    color: #302f2e;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.part3 p{
+    font-family: 'Baloo Tamma 2', cursive;
+}
+
+.last-footer{
+    text-align: center;
+    font-family: 'PT Sans', sans-serif;
+}

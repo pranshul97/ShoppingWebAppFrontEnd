@@ -1,0 +1,23 @@
+.topnav{
+    background-color: #FFCE2B;
+    margin-bottom: 5px;
+}
+
+.topnav::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.topnav a{
+    float: left;
+    width: 20%;
+    color: #302f2e;
+    font-family: 'Baloo Tamma 2', cursive;
+    font-size: 25px;
+    text-align: center;
+    text-decoration: none;
+}
+.topnav a:hover{
+    color: deeppink;
+}
