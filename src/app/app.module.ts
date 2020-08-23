@@ -11,6 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { HttpClientModule} from '@angular/common/http';
 import { DisplayProductComponent } from './display-product/display-product.component';
+import { CompareComponent } from './compare/compare.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DisplayProductComponent } from './display-product/display-product.compo
     NavBarComponent,
     LoginComponent,
     RegistrationComponent,
-    DisplayProductComponent
+    DisplayProductComponent,
+    CompareComponent
   ],
   imports: [
     BrowserModule,
