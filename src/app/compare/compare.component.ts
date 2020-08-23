@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CompareComponent implements OnInit {
 
+  productsIds: any;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.productsIds=sessionStorage.getItem("productsToBeCompared");
   }
 
 }
