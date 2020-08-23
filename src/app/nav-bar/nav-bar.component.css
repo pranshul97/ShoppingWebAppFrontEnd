@@ -1,5 +1,5 @@
 .topnav{
-    background-color: #FFCE2B;
+    /*background-color: #FFCE2B;*/
     margin-bottom: 5px;
 }
 
@@ -10,6 +10,7 @@
 }
 
 .topnav div{
+    background-color: #FFCE2B;
     float: left;
     width: 20%;
     text-align: center;
@@ -27,12 +28,10 @@
 
 .dropdown{
     display: none;
-    position: relative;
-    /*background-color: #f1f1f1;*/
     background-color: #f1f1f1;
-    min-width: 160px;
+    /*background-color: #FFCE2B;*/
+    min-width: 100%;
      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
 }
 .dropdown a{
     color: black;
@@ -42,5 +41,4 @@
 }
 .topnav div:hover .dropdown{
     display: block;
-    
 }
