@@ -1,2 +1,78 @@
-<p>display-product works!</p>
-<p>{{ productId}}</p>
+<p>{{ productId }}</p>
+<script>
+    $(function(){
+        var index=0;
+        var pics=[
+            "assets/img/img1.jpg",
+            "assets/img/img2.jpeg",
+            "assets/img/img3.jpg",
+            "assets/img/img4.jpg"
+        ];
+        $("#prev").click(function(){
+            //alert("previous pressed"+index);
+            index=(index-1+pics.length)%(pics.length);
+            $("#images").attr("src",pics[index]);
+        })
+        $("#next").click(function(){
+            //alert("next pressed"+index);
+            index=(index+1)%(pics.length);
+            $("#images").attr("src",pics[index]);
+        })
+    })
+</script>
+<div class="mid-tab">
+    <div class="col1">
+        <div class="portion">
+            <h2 style="text-align: center;">Product Images</h2>
+            <a id="prev" class="prev">&#10094;</a>
+            <img id="images" src="assets/img/img1.jpg">
+            <a id="next" class="next">&#10095;</a>
+        </div>
+        <div class="mid-tab">
+            <div class="small">
+                <img src="assets/img/img1.jpg">
+            </div>
+            <div class="small">
+                <img src="assets/img/img2.jpeg">
+            </div>
+            <div class="small">
+                <img src="assets/img/img3.jpg">
+            </div>
+            <div class="small">
+                <img src="assets/img/img4.jpg">
+            </div>
+        </div>
+    </div>
+    <div class="col2">
+        <div class="portion1">
+            <h2 style="text-align: center;">Product Description</h2>
+            <p>It's been a few days since OnePlus officially launched the Nord, and it's time to take a 
+                closer look at how it fits into today's mid-tier smartphone segment. The OnePlus Nord 
+                starts at Rs. 24,999 for the 64GB Amazon-exclusive variant, but this is only going on 
+                sale in September. If you don't want to wait, you have the option of the higher-priced 
+                variants which will be available starting from August 4. The good news is that even the 
+                top-end variant doesn't breach Rs. 30,000, and this is the one we'll be testing today.
+            </p>
+            <p>The OnePlus Nord is a new budget offering from OnePlus, which manages 
+                to deliver a similar Android experience as the OnePlus 8, but at a more affordable price. 
+                OnePlus has kept all the staples such as the AMOLED display, Warp Charge fast charging, and a 
+                big battery in the Nord. However, it has made some cuts when it comes to the SoC and the 
+                build quality. The OnePlus Nord still has glass on the back, but instead of a metal frame, 
+                it's plastic.
+            </p>
+            <p>The SoC used is the Qualcomm Snapdragon 765G, and not an 800-series chip as we're used to 
+                seeing. However, the Nord does support 5G, which is a cool bonus. As an overall package, 
+                it's really hard to find fault with the OnePlus Nord. App and gaming performance is good,
+                 it captures good photos and videos in daylight, and the display supports HDR10+.
+            </p>
+            <p>
+                Low-light image quality suffers a bit, but that's pretty 
+                much this phone's only major weakness. Battery life is very good and the single 
+                speaker gets decently loud. One impressive feature of the OnePlus Nord is its ability 
+                to shoot selfie videos at 4K 60fps, which is something even the OnePlus 8 and 8 Pro can't do.
+            </p>
+
+        </div>
+        <button type="submit">Add To Cart</button>
+    </div>
+</div>
