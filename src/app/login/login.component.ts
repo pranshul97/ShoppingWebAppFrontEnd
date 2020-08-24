@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Login } from "./login";
+import { LoginService } from "../login.service";
+
 
 @Component({
   selector: 'app-login',
@@ -7,9 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  retailerLogin : Login = new Login();
+  message: any;
+
+  constructor(private service: LoginService) { }
 
   ngOnInit(): void {
   }
+
+  loginRetailer(){
+
+    this.service.login(this.retailerLogin).subscribe(
+      data => {
+        alert(JSON.stringify(data))
+      }
+    )
+    this.message = "Login successfull"
+  }
+  
+  
 
 }
