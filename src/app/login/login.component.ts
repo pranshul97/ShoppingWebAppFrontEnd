@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
 
     this.service.login(this.retailerLogin).subscribe(
       data => {
-        alert(JSON.stringify(this.retailerLogin))
+        alert(JSON.stringify(data))
       }
     )
     this.message = "Login successfull"
