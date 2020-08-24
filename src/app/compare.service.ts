@@ -7,7 +7,11 @@ import { Injectable } from '@angular/core';
 })
 export class CompareService {
 
-  constructor(private http: HttpClient) { }
+  compare: Compare;
+
+  constructor(private http: HttpClient) {
+      this.compare=new Compare();
+   }
 
   compareProduct(compare: Compare){
     let url = 'http://localhost:8080/compare';
