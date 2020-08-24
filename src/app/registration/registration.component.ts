@@ -20,7 +20,7 @@ export class RegistrationComponent implements OnInit {
   addRetailer(){
     this.service.addRetailer(this.retailer).subscribe(
       data => {
-        alert(JSON.stringify(this.retailer));
+       alert(JSON.stringify(this.retailer));
       }
     )
     this.message = "Retailer registered successfully";
