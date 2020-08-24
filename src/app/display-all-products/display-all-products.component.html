@@ -1,4 +1,4 @@
-<div class="mid-tab">
+<div class="mid-tab" *ngIf="data.status=='SUCCESS'; else notPresent">
     <div class="col1">
         <div class="portion">
             <h2 style="text-align: center;">Sort</h2>
@@ -57,30 +57,16 @@
             </form>
         </div>
     </div>
-    <div class="col2">
+
+    <div class="col2" *ngFor="let item of data.list">
         <div class="portion1">
-            <h2 style="text-align: center;">Product1</h2>
-        </div>
-        <div class="portion1">
-            <h2 style="text-align: center;">Product2</h2>
-        </div>
-        <div class="portion1">
-            <h2 style="text-align: center;">Product3</h2>
-        </div>
-        <div class="portion1">
-            <h2 style="text-align: center;">Product4</h2>
-        </div>
-        <div class="portion1">
-            <h2 style="text-align: center;">Product5</h2>
-        </div>
-        <div class="portion1">
-            <h2 style="text-align: center;">Product6</h2>
-        </div>
-        <div class="portion1">
-            <h2 style="text-align: center;">Product7</h2>
-        </div>
-        <div class="portion1">
-            <h2 style="text-align: center;">Product8</h2>
+            <h2 style="font-family: 'Baloo Tamma 2', cursive;">Product Name: <a routerLink="/app-display-product" style="text-decoration: none;">{{item.name}}</a></h2>
+            <h2 style="font-family: 'Baloo Tamma 2', cursive;">By: {{item.brandName}}</h2>
+            <h2 style="font-family: 'Baloo Tamma 2', cursive;">Price: {{item.price}}</h2>
         </div>
     </div>
 </div>
+<ng-template #notPresent>
+    <h2 style="text-align: center;">Sorry!! no such product in our warehouse.</h2>
+    <img style="align-content: center; width: 50%;height: 50%;margin-left: 25%;" src="assets/img/sad-emoji.png" >
+</ng-template>

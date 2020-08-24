@@ -15,9 +15,19 @@ export class DisplayAllProductsComponent implements OnInit {
     this.route.params.subscribe(
       params=>{
         const value= params['value'];
-        alert(value);
+        //alert(value);
         this.service.searchByName(value).subscribe(data=>{
+          this.data=data;
           alert(JSON.stringify(data));
+          /*if(this.data.status=="SUCCESS"){
+            alert("product Found");
+          }
+          else{
+            alert("Product not found");
+          }*/
+          for(let item of this.data.list){
+            //alert(item.name+", "+item.description);
+          }
         })
       }
     )
