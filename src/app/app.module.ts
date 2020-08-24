@@ -12,7 +12,8 @@ import { RegistrationComponent } from './registration/registration.component';
 import { HttpClientModule} from '@angular/common/http';
 import { DisplayProductComponent } from './display-product/display-product.component';
 import { CompareComponent } from './compare/compare.component';
-
+import { UserRegistrationComponent } from './user-registration/user-registration.component';
+import { UserLoginComponent } from './user-login/user-login.component';
 
 
 import { DisplayAllProductsComponent } from './display-all-products/display-all-products.component';
@@ -28,9 +29,8 @@ import { DisplayAllProductsComponent } from './display-all-products/display-all-
     RegistrationComponent,
     DisplayProductComponent,
     CompareComponent,
-
-
-
+    UserRegistrationComponent,
+    UserLoginComponent,
     DisplayAllProductsComponent
 
   ],
