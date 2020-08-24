@@ -1,3 +1,3 @@
 export class Compare{
-    productIdArray: any[];
+    productId: any[];
 }
