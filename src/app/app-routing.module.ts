@@ -15,7 +15,8 @@ const routes: Routes = [
   {path: 'app-compare', component: CompareComponent},
   { path: 'app-user-registration', component: UserRegistrationComponent},
   {path: 'app-user-login', component: UserLoginComponent},
-  {path: 'app-display-all-products', component: DisplayAllProductsComponent}
+  /*{path: 'app-display-all-products', component: DisplayAllProductsComponent},*/
+  {path: 'app-display-all-products/:value' , component: DisplayAllProductsComponent}
 ];
 
 @NgModule({

@@ -1,8 +1,10 @@
 <div class="header">
     <h1>Shopping.com</h1>
     <div class="searchbar">
-        <input type="text" placeholder="Search for products,brands and more" />
+    <form (ngSubmit)="text(123)">
+        <input type="text" placeholder="Search for products,brands and more" name="t" [(ngModel)]="value" />
         <button type="submit"><img src="assets/img/magnifying.png"></button>
+    </form>
     </div>
     <img src="assets/img/cart.png">
 </div>
