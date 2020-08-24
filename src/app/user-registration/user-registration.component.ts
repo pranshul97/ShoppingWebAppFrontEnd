@@ -10,6 +10,7 @@ import{ UserService } from '../user.service';
 export class UserRegistrationComponent {
 
   user: User =new User();
+  message: string
 
   constructor(private userService: UserService) { }
 
@@ -18,6 +19,7 @@ export class UserRegistrationComponent {
       //remove alert
       alert(JSON.stringify(data));
     })
+    this.message="Registration Done Successfully!! ";
   }
 
 }
