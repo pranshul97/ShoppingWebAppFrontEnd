@@ -5,29 +5,31 @@
 </script>
 
 <div id="comparebutton">
-    <button id = "addbutton" type="button" onclick="compareProductDetails()">Add Product For Comparison</button>
+    <button id = "addbutton" (click)="compareProductDetails()">Show product for     Comparison</button>
 </div>
 <div id="compareproducts">
     <div class="comparing">
         <div class="compareproductpic">
-            <img id="imgs" src="cart.png">
+            <img id="imgs" src="./assets/img/img1.jpg">
         </div>
         <div class="compareproductpicdesc">
-            <table>
-                <th>Name</th><th>Brand Name</th><th>Model</th><th>Description</th><th>Price</th>
-                <tr *ngFor="let pro1 of compareProduct1">
-                    <td>{{ pro1.name }}</td>
-                    <td>{{ pro1.brandName }}</td>
-                    <td>{{ pro1.model }}</td>
-                    <td>{{ pro1.description }}</td>
-                    <td>{{ pro1.price }}</td>
-                </tr>
-            </table>
+            <span *ngFor="let item of result">
+                 <table *ngIf="flag">
+                    <th>Name</th><th>Brand Name</th><th>Model</th><th>Description</th><th>Price</th>
+                        <tr>
+                            <td>{{ item.name }}</td>
+                            <td>{{ item.brandName }}</td>
+                            <td>{{ item.model }}</td>
+                            <td>{{ item.description }}</td>
+                            <td>{{ item.price }}</td>
+                        </tr>
+                </table>
+            </span>
         </div>
     </div>
-    <div class="comparing">
+    <!--<div class="comparing">
         <div class="compareproductpic">
-            <img id="imgs" src="magnifying.jpg">
+            <img id="imgs" src="/src/assets/img/magnifying.png">
         </div>
         <div class="compareproductpicdesc">
             <table>
@@ -41,7 +43,7 @@
                 </tr>
             </table>
         </div>
-    </div> 
+    </div> -->
     <!--<div class="comparing">
         <div class="compareproductpic">
             <img id="imgs" src="download1.jpg">

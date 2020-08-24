@@ -42,10 +42,17 @@
 
 .compareproductpicdesc table{
     font-family: 'PT Sans', sans-serif;
+    border: solid;
+    width: 80%;
 }
 
-#compareproducts{
+/*#compareproducts{
     visibility: hidden;
+}*/
+
+td{
+    height: 10%;
+    width: 20%;
 }
 
 

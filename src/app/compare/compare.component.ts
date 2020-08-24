@@ -8,28 +8,45 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './compare.component.html',
   styleUrls: ['./compare.component.css']
 })
-export class CompareComponent implements OnInit {
+export class CompareComponent{
 
-  compare: Compare = new Compare();
+  compare: Compare;
 
-  compareProduct1: any;
-  compareProduct2: any;
-  compareProduct3: any;
-  compareProduct4: any;
+  data:any;
+  flag: boolean=false;
+  result;
 
-  constructor(private compareService: CompareService, private router: Router) { }
+  id: number[];
 
-  ngOnInit(): void {
-    this.compare.productId.push(4);
-    this.compare.productId.push(11);
+  constructor(private compareService: CompareService, private router: Router) { 
+    this.compare=new Compare();
+    this.id= [4,11];
   }
 
+  /*ngOnInit(): void {
+  }*/
+
   compareProductDetails(){
-    this.compareService.compareProduct(this.compare).subscribe(data => {
-      this.compareProduct1=data[0];
-      alert(this.compareProduct1);
-      this.compareProduct2=data[1];
-      alert(this.compareProduct2);
+    this.compareService.compareProduct(this.id).subscribe(data => {
+      this.flag=true;
+      this.data=data;
+      this.result=this.data.list;
+      //alert(JSON.stringify(data));
+      console.log(this.data);
+      for(let item of this.result){
+        //alert(item.name+", "+item.price);
+        console.log(item.name+", "+item.price)
+      }
+      //alert(JSON.stringify(data));
+      //console.log(JSON.stringify(this.id));
+      //this.compareProduct1=data[0]; 
+      //alert(this.compareProduct1);
+      //console.log(this.compareProduct1);
+      //console.log(data[0]);
+      //console.log(this.compareProduct1);
+      //this.compareProduct2=data[1];
+      //console.log(this.compareProduct2);
+      //console.log("data"+data);
     })
   }
 
