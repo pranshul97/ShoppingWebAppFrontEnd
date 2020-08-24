@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { CompareService } from './../compare.service';
 import { Compare } from './../compare';
 import { Component, OnInit } from '@angular/core';
 
@@ -10,10 +12,18 @@ export class CompareComponent implements OnInit {
 
   compare: Compare = new Compare();
 
-  constructor() { }
+  id: {
+    "productsId" : [4, 11]
+  }
+
+  compareComponentobj: any;
+
+  constructor(private compareService: CompareService, private router: Router) { }
 
   ngOnInit(): void {
-    this.compare.productId=sessionStorage.getItem(this.compare);
+    this.compareService.compareProduct(this.compare).subscribe(data => {
+      this.compareComponentobj=data;
+    })
   }
 
 }
