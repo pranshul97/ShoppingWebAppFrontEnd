@@ -12,6 +12,9 @@ import { RegistrationComponent } from './registration/registration.component';
 import { HttpClientModule} from '@angular/common/http';
 import { DisplayProductComponent } from './display-product/display-product.component';
 import { CompareComponent } from './compare/compare.component';
+import { UserRegistrationComponent } from './user-registration/user-registration.component';
+import { UserComponent } from './user/user.component';
+import { UserLoginComponent } from './user-login/user-login.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { CompareComponent } from './compare/compare.component';
     LoginComponent,
     RegistrationComponent,
     DisplayProductComponent,
-    CompareComponent
+    CompareComponent,
+    UserRegistrationComponent,
+    UserComponent,
+    UserLoginComponent
   ],
   imports: [
     BrowserModule,
