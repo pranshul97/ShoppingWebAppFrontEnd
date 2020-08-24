@@ -23,7 +23,7 @@
 <div class="mid-tab">
     <div class="col1">
         <div class="portion">
-            <h2 style="text-align: center;">Product Images</h2>
+            <h2 style="text-align: center;">{{product.name}}</h2>
             <a id="prev" class="prev">&#10094;</a>
             <img id="images" src="assets/img/img1.jpg">
             <a id="next" class="next">&#10095;</a>
@@ -46,7 +46,7 @@
     <div class="col2">
         <div class="portion1">
             <h2 style="text-align: center;">Product Description</h2>
-            <p>It's been a few days since OnePlus officially launched the Nord, and it's time to take a 
+            <!--<p>It's been a few days since OnePlus officially launched the Nord, and it's time to take a 
                 closer look at how it fits into today's mid-tier smartphone segment. The OnePlus Nord 
                 starts at Rs. 24,999 for the 64GB Amazon-exclusive variant, but this is only going on 
                 sale in September. If you don't want to wait, you have the option of the higher-priced 
@@ -70,8 +70,11 @@
                 much this phone's only major weakness. Battery life is very good and the single 
                 speaker gets decently loud. One impressive feature of the OnePlus Nord is its ability 
                 to shoot selfie videos at 4K 60fps, which is something even the OnePlus 8 and 8 Pro can't do.
-            </p>
-
+            </p>-->
+            <p>
+            {{product.description}}</p>
+            <h2>Brand :{{product.brandName}}</h2>
+            <h2>Price :{{product.price}}</h2>
         </div>
         <button type="submit">Add To Cart</button>
     </div>
