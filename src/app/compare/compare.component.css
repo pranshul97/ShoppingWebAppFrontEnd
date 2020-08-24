@@ -20,6 +20,7 @@
 .comparing{
     width: 100%;
     padding: 5px;
+    padding-bottom: 80px;
 }
 
 .compareproductpic{
@@ -39,7 +40,7 @@
     font-size: 25px; 
 }
 
-.compareproductpicdesc p{
+.compareproductpicdesc table{
     font-family: 'PT Sans', sans-serif;
 }
 

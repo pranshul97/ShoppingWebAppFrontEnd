@@ -12,17 +12,24 @@ export class CompareComponent implements OnInit {
 
   compare: Compare = new Compare();
 
-  id: {
-    "productsId" : [4, 11]
-  }
-
-  compareComponentobj: any;
+  compareProduct1: any;
+  compareProduct2: any;
+  compareProduct3: any;
+  compareProduct4: any;
 
   constructor(private compareService: CompareService, private router: Router) { }
 
   ngOnInit(): void {
+    this.compare.productId.push(4);
+    this.compare.productId.push(11);
+  }
+
+  compareProductDetails(){
     this.compareService.compareProduct(this.compare).subscribe(data => {
-      this.compareComponentobj=data;
+      this.compareProduct1=data[0];
+      alert(this.compareProduct1);
+      this.compareProduct2=data[1];
+      alert(this.compareProduct2);
     })
   }
 
