@@ -1,0 +1,47 @@
+.sidenav {
+    height: 40%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    overflow-x: hidden;
+    padding-top: 20px;
+    margin-top: 215px;
+    
+  }
+  
+  
+  .sidenav a, .dropdown-btn {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+    margin-top: auto;
+  }
+  
+  
+  .sidenav a:hover, .dropdown-btn:hover {
+    color: #f1f1f1;
+  }
+  
+  
+  .main {
+    margin-left: 200px; 
+    font-size: 20px; 
+    padding: 0px 10px;
+  }
+  
+  
+  .active {
+    background-color: green;
+    color: white;
+  }

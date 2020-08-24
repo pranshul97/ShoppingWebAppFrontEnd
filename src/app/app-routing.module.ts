@@ -7,6 +7,7 @@ import { CompareComponent } from './compare/compare.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { DisplayAllProductsComponent } from './display-all-products/display-all-products.component';
+import { RetailerdashboardComponent } from './retailerdashboard/retailerdashboard.component';
 
 const routes: Routes = [
   {path: 'app-register',component: RegistrationComponent},
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'app-user-registration', component: UserRegistrationComponent},
   {path: 'app-user-login', component: UserLoginComponent},
   /*{path: 'app-display-all-products', component: DisplayAllProductsComponent},*/
-  {path: 'app-display-all-products/:value' , component: DisplayAllProductsComponent}
+  {path: 'app-display-all-products/:value' , component: DisplayAllProductsComponent},
+  {path: 'app-retailerdashboard', component: RetailerdashboardComponent}
 ];
 
 @NgModule({

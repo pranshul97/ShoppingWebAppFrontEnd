@@ -17,6 +17,7 @@ import { UserLoginComponent } from './user-login/user-login.component';
 
 
 import { DisplayAllProductsComponent } from './display-all-products/display-all-products.component';
+import { RetailerdashboardComponent } from './retailerdashboard/retailerdashboard.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { DisplayAllProductsComponent } from './display-all-products/display-all-
     CompareComponent,
     UserRegistrationComponent,
     UserLoginComponent,
-    DisplayAllProductsComponent
+    DisplayAllProductsComponent,
+    RetailerdashboardComponent
 
   ],
   imports: [
