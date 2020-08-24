@@ -14,8 +14,8 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  text(value){
+  text(){
     //alert(this.value);
-    this.router.navigate(['app-display-all-products/'+value]);
+    this.router.navigate(['app-display-all-products/'+this.value]);
   }
 }
