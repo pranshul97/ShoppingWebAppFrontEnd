@@ -1,4 +1,4 @@
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { CompareService } from './../compare.service';
 import { Compare } from './../compare';
 import { Component, OnInit } from '@angular/core';
@@ -8,27 +8,50 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './compare.component.html',
   styleUrls: ['./compare.component.css']
 })
-export class CompareComponent{
+export class CompareComponent implements OnInit{
 
   compare: Compare;
 
   data:any;
   flag: boolean=false;
   result;
-
-  id: number[];
+  comp: any;
+  id: number[]=[];
   
 
-  constructor(private compareService: CompareService, private router: Router) { 
+  constructor(private compareService: CompareService, private router: Router, private route: ActivatedRoute) { 
     this.compare=new Compare();
-    this.id= [4,11];
+    //this.id= [4,11];
   }
 
-  /*ngOnInit(): void {
-  }*/
+  ngOnInit(): void {
+    /*this.route.params.subscribe(
+      params=>{
+        this.id=params['compareArr'];
+        alert(this.id);
+      })*/
+      this.comp=JSON.parse(sessionStorage.getItem('compareArr'));
+      //alert(this.comp);
+      for(let it of this.comp){
+        this.id.push(it);
+        //alert(it);
+      }
+      this.compareService.compareProduct(this.id).subscribe(data => {
+        this.flag=true;
+        this.data=data;
+        this.result=this.data.list;
+        //alert(JSON.stringify(data));
+        console.log(this.data);
+        for(let item of this.result){
+          //alert(item.name+", "+item.price);
+          console.log(item.name+", "+item.price)
+        }
+      })
+      //alert(this.id);
+  }
 
-  compareProductDetails(){
-    this.compareService.compareProduct(this.id).subscribe(data => {
+  /*compareProductDetails(){
+    this.compareService.compareProduct(this.comp).subscribe(data => {
       this.flag=true;
       this.data=data;
       this.result=this.data.list;
@@ -49,6 +72,6 @@ export class CompareComponent{
       //console.log(this.compareProduct2);
       //console.log("data"+data);
     })
-  }
+  }*/
 
 }
