@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RetailerService } from '../retailer.service';
+import { AddProduct } from "./addproduct";
+import { AddproductService } from "../addproduct.service";
 
 @Component({
   selector: 'app-addproduct',
@@ -11,9 +13,10 @@ export class AddproductComponent implements OnInit {
   retailerId: any;
   data: any;
   event: any;
+  message: any;
 
-
-  constructor(private retailerService: RetailerService) { }
+  addProduct: AddProduct = new AddProduct();
+  constructor(private retailerService: RetailerService, private productService: AddproductService ) { }
 
   ngOnInit(): void {
     this.retailerId = sessionStorage.getItem('retailerId');
@@ -44,12 +47,17 @@ export class AddproductComponent implements OnInit {
     //     alert(d);
     //   }
     // })
-   
-
   }
 
+  productAdd(){
+    this.productService.addProduct(this.addProduct).subscribe(
+      data => {
+       alert(JSON.stringify(this.addProduct));
+      }
+    )
+    this.message = "Retailer registered successfully";
 
 
-  
+  }
 
 }
