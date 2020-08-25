@@ -1,18 +1,63 @@
 <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&family=PT+Sans&display=swap" rel="stylesheet">
-    <form (ngSubmit)="addRetailer()"> 
+
+    <form (ngSubmit)="addRetailer()">  
         <div class="container"> 
-            <h2>Hey Retailer! Welcome to your new business destination</h2>
+            <h2>Hey Retailer!Welcome to<br/>
+                new business destination</h2>
             <h2>Register Now!</h2>
             <label>Name : </label><br/>  
-            <input type="text" placeholder="Enter your name" name="name" [(ngModel)]="retailer.name" required><br/> 
+            <input id="name" name="name" class="form-control" required minlength="4" #name="ngModel" type="text" placeholder="Enter your name" name="name" [(ngModel)]="retailer.name" required><br/>
+
+            <div *ngIf="name.invalid && (name.dirty || name.touched)"
+            class="alert alert-danger">
+            <div *ngIf="name.errors.required">
+                Name is required.
+            </div>
+            <div *ngIf="name.errors.minlength">
+                Name must be at least 4 characters long.
+            </div>
+            </div>
             <label>Contact Number : </label><br/>  
-            <input type="text" placeholder="Enter your contact number" name="number" [(ngModel)]="retailer.contactNumber" required><br/>   
+            <input id="number" name="name" class="form-control" required minlength="10" #number="ngModel" type="text" placeholder="Enter your contact number" name="number" [(ngModel)]="retailer.contactNumber" required><br/>
+            <div *ngIf="number.invalid && (number.dirty || number.touched)"
+            class="alert alert-danger">
+            <div *ngIf="number.errors.required">
+                Contact Number is required.
+            </div>
+            <div *ngIf="number.errors.minlength">
+                Contact Number must be 10 characters long.
+            </div>
+            </div> 
             <label>Email : </label><br/>  
-            <input type="text" placeholder="Enter Email" name="email" [(ngModel)]="retailer.email" required><br/> 
-            <label>Password : </label><br/>  
-            <input type="password" placeholder="Enter your password" name="password" required><br/> 
+            <input id="email" name="email" class="form-control" #email="ngModel" type="text" placeholder="Enter Email" name="email" [(ngModel)]="retailer.email" required><br/>
+            <div *ngIf="email.invalid && (email.dirty || email.touched)"
+            class="alert alert-danger">
+            <div *ngIf="email.errors.required">
+                Email is required.
+            </div>
+            </div>
+            <label>Password : </label><br/> 
+            <input id="password" name="password" class="form-control" type="password" #password="ngModel" placeholder="Enter your password" name="password" [(ngModel)]="retailer.pwd" required><br/>
+            <div *ngIf="password.invalid && (password.dirty || password.touched)"
+            class="alert alert-danger">
+            <div *ngIf="password.errors.required">
+                Password is required.
+            </div>
+            <div *ngIf="password.errors.minlength">
+                Password must be at least 4 characters long.
+            </div>
+            </div>
             <label> Confirm Password : </label><br/>  
-            <input type="password" placeholder="Enter your password" name="password" [(ngModel)]="retailer.password" required><br/> 
+            <input id="password" name="password" class="form-control" #password="ngModel" type="password" placeholder="Enter your password" name="password" [(ngModel)]="retailer.password" required><br/>
+            <div *ngIf="password.invalid && (password.dirty || password.touched)"
+            class="alert alert-danger">
+            <div *ngIf="password.errors.required">
+                Password is required.
+            </div>
+            <div *ngIf="password.errors.minlength">
+                Password must be at least 4 characters long.
+            </div>
+            </div>
             <button type="submit">Register</button><br/>  
             <input type="checkbox" checked="checked"> Remember me<br/>
             <button type="button" class="newuserbtn"> Existing User? <a [routerLink]="'/app-login'">Login Now!</a></button><br/>  

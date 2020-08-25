@@ -1,5 +1,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&family=PT+Sans&display=swap" rel="stylesheet">
-    <form (ngSubmit)="loginRetailer()">  
+<script type="text/javascript">  
+    function matchpass(){  
+    var firstpassword=document.f1.password.value;  
+    var secondpassword=document.f1.password2.value;  
+      
+    if(firstpassword==secondpassword){  
+    return true;  
+    }  
+    else{  
+    alert("password must be same!");  
+    return false;  
+    }  
+    }  
+</script>  
+    <form (ngSubmit)="loginRetailer()" name = "f1" onsubmit="return matchpass()">  
         <div class="container">
             <h2>Retailer Login Here</h2> 
             <label>Email : </label><br/>  

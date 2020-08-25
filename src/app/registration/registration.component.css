@@ -42,4 +42,12 @@ button:hover {
           border-width: 200px;
           width:max-content;
           margin: auto;
-}   
+} 
+
+.ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid teal; /* green */
+  }
+  
+  .ng-invalid:not(form)  {
+    border-left: 5px solid #a94442; /* red */
+  }
