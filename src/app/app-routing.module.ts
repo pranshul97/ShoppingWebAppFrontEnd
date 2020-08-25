@@ -8,7 +8,9 @@ import { UserRegistrationComponent } from './user-registration/user-registration
 import { UserLoginComponent } from './user-login/user-login.component';
 import { DisplayAllProductsComponent } from './display-all-products/display-all-products.component';
 import { RetailerdashboardComponent } from './retailerdashboard/retailerdashboard.component';
-import { AddproductComponent } from './addproduct/addproduct.component';
+
+import { HomepageComponent } from './homepage/homepage.component';
+
 
 const routes: Routes = [
   {path: 'app-register',component: RegistrationComponent},
@@ -20,7 +22,8 @@ const routes: Routes = [
   /*{path: 'app-display-all-products', component: DisplayAllProductsComponent},*/
   {path: 'app-display-all-products/:value' , component: DisplayAllProductsComponent},
   {path: 'app-retailerdashboard', component: RetailerdashboardComponent},
-  {path: 'app-addproducts', component: AddproductComponent}
+  {path: 'app-homepage', component: HomepageComponent}
+
 ];
 
 @NgModule({

@@ -17,14 +17,15 @@ export class UserLoginComponent  {
 
   loginuser(){
     this.userloginService.login(this.login).subscribe(data=>{
-      alert(JSON.stringify(data));
+     alert(JSON.stringify(data));
       if(data.status == 'SUCCESS'){
         let userId = data.userId;
-        let userName = data,name;
+        let userName = data.name;
 
         sessionStorage.setItem('userId', String(userId));
-        sessionStorage.setItem('userName', name);
-        this.router.navigate(['dashboard']);
+        sessionStorage.setItem('userName', String(userName));
+        alert(sessionStorage.getItem('userName'));
+        this.router.navigate(['app-homepage']);
 
       }
       else{
