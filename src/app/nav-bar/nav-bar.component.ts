@@ -13,8 +13,8 @@ export class NavBarComponent {
   productId: any;
   seeproduct(productId: number){
     this.productId=productId;
-    sessionStorage.setItem("productIdToBeDisplayed",this.productId);
-    this.router.navigate(['app-display-product']);
+    //sessionStorage.setItem("productIdToBeDisplayed",this.productId);
+    this.router.navigate(['app-display-product/'+this.productId]);
     
   }
 }

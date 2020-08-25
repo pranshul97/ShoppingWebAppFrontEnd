@@ -12,7 +12,7 @@ import { RetailerdashboardComponent } from './retailerdashboard/retailerdashboar
 const routes: Routes = [
   {path: 'app-register',component: RegistrationComponent},
   {path: 'app-login' , component: LoginComponent},
-  {path: 'app-display-product', component: DisplayProductComponent},
+  {path: 'app-display-product/:productId', component: DisplayProductComponent},
   {path: 'app-compare', component: CompareComponent},
   { path: 'app-user-registration', component: UserRegistrationComponent},
   {path: 'app-user-login', component: UserLoginComponent},

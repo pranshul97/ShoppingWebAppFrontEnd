@@ -60,7 +60,7 @@
 
     <div class="col2" *ngFor="let item of data.list">
         <div class="portion1">
-            <h2 style="font-family: 'Baloo Tamma 2', cursive;">Product Name: <a routerLink="/app-display-product" style="text-decoration: none;">{{item.name}}</a></h2>
+            <h2 style="font-family: 'Baloo Tamma 2', cursive;">Product Name: <a routerLink="/app-display-product/{{item.productId}}" style="text-decoration: none;">{{item.name}}</a></h2>
             <h2 style="font-family: 'Baloo Tamma 2', cursive;">By: {{item.brandName}}</h2>
             <h2 style="font-family: 'Baloo Tamma 2', cursive;">Price: {{item.price}}</h2>
         </div>
