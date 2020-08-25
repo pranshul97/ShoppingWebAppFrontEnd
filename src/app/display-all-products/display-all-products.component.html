@@ -12,15 +12,11 @@
             </form>
 
             <h3>Filter by Price</h3>
-            <form style="font-size: 25px;">
-                <input type="checkbox" value="Pri1">
-                <label>100-200</label><br>
-                <input type="checkbox" value="Pri2">
-                <label> 200-300</label><br>
-                <input type="checkbox" value="Pri3">
-                <label> 300-400</label><br>
-                <input type="checkbox" value="Pri4">
-                <label> 400-500</label><br>
+            <form (ngSubmit)="applyPrice()" style="font-size: 15px;">
+                <div>
+                    Minimum Value: <input type="number" name="min" [(ngModel)]=price.minval style="font-size: 15px;"/>
+                    Maximum Value: <input type="number" name="max" [(ngModel)]=price.maxval style="font-size: 15px;"/><br>
+                </div>
                 <input type="submit" value="Apply" />
             </form>
             <h3>Filter by Brands</h3>
@@ -35,8 +31,8 @@
 
 
     <div class="col2" *ngFor="let item of data.list">
-        <div class="portion1">
-            <div class="disp1">
+        <div class="portion1" *ngIf="item.price>min && item.price<=max">
+            <div class="disp1" >
                 <h2 style="font-family: 'Baloo Tamma 2', cursive;">Product Name: <a routerLink="/app-display-product/{{item.productId}}" style="text-decoration: none;">{{item.name}}</a></h2>
                 <h2 style="font-family: 'Baloo Tamma 2', cursive;">By: {{item.brandName}}</h2>
                 <h2 style="font-family: 'Baloo Tamma 2', cursive;">Price: {{item.price}}</h2>
