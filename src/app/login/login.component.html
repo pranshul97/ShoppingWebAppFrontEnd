@@ -22,7 +22,7 @@
                 Password must be at least 4 characters long.
             </div>
             </div>  
-            <button type="submit"> <a [routerLink]="'/app-retailerdashboard'" >Login</a></button><br/>  
+            <button type="submit"> <a (click)="loginRetailer()" >Login</a></button><br/>  
             <input type="checkbox" checked="checked"> Remember me<br/>
             <button type="button" class="newuserbtn"> New Retailer?<a [routerLink]="'/app-register'">Register Now!</a></button><br/>  
             Forgot <a href="#"> password? </a>   

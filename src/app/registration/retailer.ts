@@ -5,3 +5,7 @@ export class Retailer{
     password: string;
     pwd: string
 }
+
+export class Category{
+    categoryName: string;
+}

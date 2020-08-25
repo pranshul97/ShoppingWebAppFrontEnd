@@ -1,5 +1,5 @@
-<link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&family=PT+Sans&display=swap" rel="stylesheet">
-<form>
+<!-- <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&family=PT+Sans&display=swap" rel="stylesheet">
+<form (ngSubmit)="upload()" enctype="multipart/form-data"> 
     <div class="container"> 
         <h2>Add Product Here!</h2>
         <label>Product Name: </label><br/>  
@@ -12,16 +12,15 @@
         <input type="text" placeholder="Enter product model" name="model" required><br/> 
         <label>Quantity : </label><br/>  
         <input type="text" placeholder="Enter product quantity" name="quantity" required><br/>
+        <label>Product Image : </label><br/>
+        <input type="file" name="image" (change)="onFileChange($event)" /><br/>
+        <button type="submit">Upload image</button>
         <label>Category : </label>
-        <select>
-            <option value="Category">Category</option>
-            <option value="Clothing">Clothing</option>
-            <option value="Footwear">Footwear</option>
-            <option value="Appliances">Appliances</option>
-            <option value="Grocery">Grocery</option>
-            <option value="Home">Home</option>
-            <option value="Sports">Sports</option>
+        <div *ngIf= "data">
+        <select >
+            <option  *ngFor= "let d of data" value="Category">{{d.categoryName}}</option>
         </select><br/>
+        </div>
         <label>Product Description</label><br/>
         <textarea cols="80" rows="5" value="productDescription"></textarea><br/>
         <button type="submit">Add Product</button><br/>  
@@ -29,4 +28,4 @@
     </div>   
 </form>     
 
-    
+     -->
