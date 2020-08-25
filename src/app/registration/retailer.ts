@@ -6,6 +6,3 @@ export class Retailer{
     pwd: string
 }
 
-export class Category{
-    categoryName: string;
-}

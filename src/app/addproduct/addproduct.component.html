@@ -1,4 +1,4 @@
-<!-- <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&family=PT+Sans&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&family=PT+Sans&display=swap" rel="stylesheet">
 <form (ngSubmit)="upload()" enctype="multipart/form-data"> 
     <div class="container"> 
         <h2>Add Product Here!</h2>
@@ -16,11 +16,10 @@
         <input type="file" name="image" (change)="onFileChange($event)" /><br/>
         <button type="submit">Upload image</button>
         <label>Category : </label>
-        <div *ngIf= "data">
-        <select >
-            <option  *ngFor= "let d of data" value="Category">{{d.categoryName}}</option>
-        </select><br/>
-        </div>
+        <select name="category">
+            <option *ngFor= "let d of data" value="{{d}}">{{d}}</option><br/>
+        </select>
+        
         <label>Product Description</label><br/>
         <textarea cols="80" rows="5" value="productDescription"></textarea><br/>
         <button type="submit">Add Product</button><br/>  
@@ -28,4 +27,4 @@
     </div>   
 </form>     
 
-     -->
+    

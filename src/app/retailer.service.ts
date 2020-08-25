@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Retailer } from "./registration/retailer";
+import { Retailer} from "./registration/retailer";
 import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable({
@@ -16,10 +16,14 @@ export class RetailerService {
     return this.http.post(url,retailer);
     }
 
+    upload(formData: FormData){
+      let url="http://localhost:8080/product-pic-upload";
+      return this.http.post(url, formData);
+    }
+
   fetchCategory(){
-    
     var url = 'http://localhost:8080/fetchCategory';
-    return this.http.get(url)
+    return this.http.get(url);
   }
 
   

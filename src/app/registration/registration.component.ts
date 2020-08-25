@@ -26,12 +26,6 @@ export class RegistrationComponent implements OnInit {
     this.message = "Retailer registered successfully";
   }
 
-  data: any;
-  getCategory(){
-    this.service.fetchCategory().subscribe(data => {
-      this.data = data;
-    })
-    
-  }
+  
 
 }
