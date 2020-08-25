@@ -5,5 +5,6 @@ export class User{
   contactNumber: number;
   password: string;
   pwd: string;
+ // status: any;
 
 }

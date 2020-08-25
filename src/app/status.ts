@@ -1,4 +1,4 @@
 export class Status{
-    status: any
+    status: string
     message: string
 }

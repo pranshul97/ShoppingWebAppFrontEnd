@@ -18,8 +18,8 @@ export class HomepageComponent implements OnInit {
 
   logout(){
     sessionStorage.clear();
-     // sessionStorage.removeItem('userName');
-     // sessionStorage.removeItem('userId');
+     sessionStorage.removeItem('userName');
+     sessionStorage.removeItem('userId');
 
       this.router.navigate(['app-user-login'])
   }
