@@ -3,4 +3,5 @@ export class Retailer{
     email: string;
     contactNumber: any;
     password: string;
+    pwd: string
 }
