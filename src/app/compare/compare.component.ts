@@ -17,6 +17,7 @@ export class CompareComponent{
   result;
 
   id: number[];
+  
 
   constructor(private compareService: CompareService, private router: Router) { 
     this.compare=new Compare();
