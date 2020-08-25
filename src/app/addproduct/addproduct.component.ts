@@ -49,9 +49,9 @@ export class AddproductComponent implements OnInit {
     //alert(this.images[0]);
     //console.log(formData.get('name'));
 
-    /*this.retailerService.upload(formData).subscribe(data => {
+    this.retailerService.upload(formData).subscribe(data => {
       alert(JSON.stringify(data));
-    })*/
+    })
   }
 
   fetchCategory(){
