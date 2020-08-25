@@ -12,8 +12,8 @@
         <input type="text" placeholder="Enter product model" name="model" [(ngModel)]="addProduct.model" required><br/> 
         <label>Quantity : </label><br/>  
         <input type="number" placeholder="Enter product quantity" name="quantity" [(ngModel)]="addProduct.quantity" required><br/>
-        <label>Product Image : </label><br/>
-        <input type="file" name="image" (change)="onFileChange($event)" /><br/>
+        <label>Product Image : </label><br/><br/>
+        <input type="file" name="image" (change)="onFileChange($event)" /><br/><br/>
        
         <label>Category : </label>
         <select [(ngModel)]="addProduct.categoryName" name="category">
@@ -21,7 +21,7 @@
         </select><br/><br/>
         
         <label>Product Description</label><br/>
-        <textarea [(ngModel)]="addProduct.description" cols="80" rows="5" value="productDescription"></textarea><br/>
+        <input type="text" style="width: 500px; height: 100px;" placeholder="Enter product description" name="description" [(ngModel)]="addProduct.model" required><br/> 
         <button type="submit">Add Product</button><br/>  
         
     </div>   
