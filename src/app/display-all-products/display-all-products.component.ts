@@ -13,7 +13,12 @@ export class DisplayAllProductsComponent implements OnInit {
   data: any;
   categoriesSelected: any[]=[];
   brandsSelected: any[]=[];
+  price: PriceFilter=new PriceFilter();
+  min: number;
+  max: number;
   ngOnInit(): void {
+    this.min=0;
+    this.max=Number.MAX_VALUE;
     this.route.params.subscribe(
       params=>{
         const value= params['value'];
@@ -50,4 +55,13 @@ export class DisplayAllProductsComponent implements OnInit {
     alert(dat);
   }
 
+  applyPrice(){
+    this.min=this.price.minval;
+    this.max=this.price.maxval;
+  }
+}
+
+class PriceFilter{
+  minval: number;
+  maxval: number;
 }
