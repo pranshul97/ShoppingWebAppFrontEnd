@@ -19,6 +19,7 @@ import { UserLoginComponent } from './user-login/user-login.component';
 import { DisplayAllProductsComponent } from './display-all-products/display-all-products.component';
 import { RetailerdashboardComponent } from './retailerdashboard/retailerdashboard.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     UserLoginComponent,
     DisplayAllProductsComponent,
     RetailerdashboardComponent,
-    DashboardComponent
+    DashboardComponent,
+    HomepageComponent
 
   ],
   imports: [
