@@ -9,7 +9,7 @@ import { AddproductService } from "../addproduct.service";
   styleUrls: ['./addproduct.component.css']
 })
 export class AddproductComponent implements OnInit {
-  name: any;
+  images: any;
   retailerId: any;
   data: any;
   event: any;
@@ -26,18 +26,26 @@ export class AddproductComponent implements OnInit {
   }
 
   onFileChange(event){
-    this.name = event.target.files[0];
+    this.images = event.target.files;
   }
 
   upload(){
+    alert(JSON.stringify(this.addProduct))
     let formData : FormData = new FormData();
     formData.append('retailerId', this.retailerId);
-    formData.append('name', this.name);
-    console.log(formData.get('name'));
+    formData.append('brandName', this.addProduct.brandName);
+    formData.append('name', this.addProduct.name);
+    formData.append('price', this.addProduct.price);
+    formData.append('model', this.addProduct.model);
+    formData.append('quantity', this.addProduct.quantity);
+    formData.append('description', this.addProduct.description);
+    formData.append('categoryName', this.addProduct.categoryName);
+    formData.append('productPic',this.images)
+    //console.log(formData.get('name'));
 
-    this.retailerService.upload(formData).subscribe(data => {
-      alert(JSON.stringify(data));
-    })
+    // this.retailerService.upload(formData).subscribe(data => {
+    //   alert(JSON.stringify(data));
+    // })
   }
 
   fetchCategory(){

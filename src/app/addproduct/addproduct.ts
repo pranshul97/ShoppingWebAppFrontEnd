@@ -3,7 +3,8 @@ export class AddProduct{
     brandName: string;
     price: any;
     model: string;
-    quantity: number;
+    quantity: any;
     description: string;
+    categoryName: string;
 
 }

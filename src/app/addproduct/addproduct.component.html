@@ -11,14 +11,14 @@
         <label>Model: </label><br/>  
         <input type="text" placeholder="Enter product model" name="model" [(ngModel)]="addProduct.model" required><br/> 
         <label>Quantity : </label><br/>  
-        <input type="text" placeholder="Enter product quantity" name="quantity" [(ngModel)]="addProduct.quantity" required><br/>
+        <input type="number" placeholder="Enter product quantity" name="quantity" [(ngModel)]="addProduct.quantity" required><br/>
         <label>Product Image : </label><br/>
         <input type="file" name="image" (change)="onFileChange($event)" /><br/>
-        <button type="submit">Upload image</button><br/>
+       
         <label>Category : </label>
-        <select name="category">
+        <select [(ngModel)]="addProduct.categoryName" name="category">
             <option *ngFor= "let d of data" value="{{d}}">{{d}}</option><br/>
-        </select>
+        </select><br/><br/>
         
         <label>Product Description</label><br/>
         <textarea [(ngModel)]="addProduct.description" cols="80" rows="5" value="productDescription"></textarea><br/>

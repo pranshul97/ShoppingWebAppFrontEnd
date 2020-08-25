@@ -15,7 +15,7 @@ button {
 form {   
           border: 3px solid #f1f1f1;   
       }   
-input[type=text], input[type=password] {   
+input[type=text], input[type=password], input[type=number] {   
           width: 300px;   
           margin: 10px 0;  
           padding: 12px 20px;   
@@ -47,4 +47,11 @@ button:hover {
           margin-right: 500px;
           margin-left: 400px; */      
 
-    }   
+    }
+    
+.textarea{
+  display: inline-block;   
+  border: 2px solid green;   
+  box-sizing: border-box;   
+
+}
