@@ -10,6 +10,7 @@ import { DisplayAllProductsComponent } from './display-all-products/display-all-
 import { RetailerdashboardComponent } from './retailerdashboard/retailerdashboard.component';
 
 import { HomepageComponent } from './homepage/homepage.component';
+import { AddproductComponent } from './addproduct/addproduct.component';
 
 
 const routes: Routes = [
@@ -22,7 +23,8 @@ const routes: Routes = [
   /*{path: 'app-display-all-products', component: DisplayAllProductsComponent},*/
   {path: 'app-display-all-products/:value' , component: DisplayAllProductsComponent},
   {path: 'app-retailerdashboard', component: RetailerdashboardComponent},
-  {path: 'app-homepage', component: HomepageComponent}
+  {path: 'app-homepage', component: HomepageComponent},
+  {path: 'app-addproducts', component: AddproductComponent}
 
 ];
 
