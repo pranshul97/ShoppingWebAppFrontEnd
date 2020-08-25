@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Login } from "./login";
 import { LoginService } from "../login.service";
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
   retailerLogin : Login = new Login();
   message: any;
 
-  constructor(private service: LoginService) { }
+  constructor(private service: LoginService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -22,10 +23,10 @@ export class LoginComponent implements OnInit {
 
     this.service.login(this.retailerLogin).subscribe(
       data => {
-        alert(JSON.stringify(data))
+        alert(JSON.stringify(this.retailerLogin))
       }
     )
-    this.message = "Login successfull"
+    this.message = "login successful";
   }
   
   
