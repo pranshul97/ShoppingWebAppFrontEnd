@@ -1,7 +1,7 @@
 <div class="mid-tab">
     <div class="col1">
         <h1 style="text-align: center;">Cart Items</h1>
-        <span *ngIf="data.status=='SUCCESS'">
+        <span *ngIf="data.status=='SUCCESS'; else notPresent">
             <span *ngFor="let item of result">
                 <div class="mid-tab">
                     <div class="part-img">
@@ -47,5 +47,9 @@
     </div>
 
 </div>
+<ng-template #notPresent>
+    <h2 style="text-align: center;">Sorry!! Nothing in the cart. Please do some shopping</h2>
+    <img style="align-content: center; width: 50%;height: 50%;margin-left: 25%;" src="assets/img/sad-emoji.png" >
+</ng-template>
 
 
