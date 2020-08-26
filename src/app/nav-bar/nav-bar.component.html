@@ -3,7 +3,7 @@
         <a routerLink="/">Home</a>
     </div>
     <div>
-        <a href="product-description page.html">Products</a>
+        <a >Products</a>
         <div class="dropdown">
             <a  (click)="seeproduct(23)">Product1</a><br />
             <a  (click)="seeproduct(24)">Product2</a><br />
@@ -11,7 +11,10 @@
         </div>
     </div>
     <div>
-        <a routerLink="/app-compare">Compare</a>
+        <a >Categories</a>
+        <div class="dropdown" *ngFor="let cat of categoryData">
+            <a>{{cat}}</a><br />
+        </div>
     </div>
     <div>
         <a routerLink="/app-register">Retailer Registration</a>

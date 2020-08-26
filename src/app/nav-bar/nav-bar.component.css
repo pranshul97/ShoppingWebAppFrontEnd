@@ -42,3 +42,6 @@
 .topnav div:hover .dropdown{
     display: block;
 }
+a:hover{
+    cursor: pointer;
+}
