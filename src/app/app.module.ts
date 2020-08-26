@@ -1,3 +1,4 @@
+import { CategoryComponent } from './category/category.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -44,7 +45,8 @@ import { RetailerdetailsComponent } from './retailerdetails/retailerdetails.comp
     DashboardComponent,
     HomepageComponent,
     AddproductComponent,
-    RetailerdetailsComponent
+    RetailerdetailsComponent,
+    CategoryComponent
 
   ],
   imports: [
