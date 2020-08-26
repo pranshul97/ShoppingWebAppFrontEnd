@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { CartDto } from './display-all-products/CartDto';
 
 @Injectable({
   providedIn: 'root'
@@ -27,5 +28,10 @@ export class SearchProductsService {
   fetchProductsByBrandName(brandName: any){
     let url='http://localhost:8080/fetchByBrandName';
     return this.http.post(url,brandName);
+  }
+
+  insertDataInCart(cart: CartDto){
+    let url='http://localhost:8080/insertCartItem';
+    return this.http.post(url,cart);
   }
 }
