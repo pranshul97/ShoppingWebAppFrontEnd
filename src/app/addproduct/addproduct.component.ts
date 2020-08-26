@@ -26,7 +26,10 @@ export class AddproductComponent implements OnInit {
   }
 
   onFileChange(event){
-    this.images = event.target.files;
+    /*for(let img of event.target.files){
+      this.images+=img;
+    }*/
+    this.images = event.target.files[0];
   }
 
   upload(){
@@ -40,12 +43,15 @@ export class AddproductComponent implements OnInit {
     formData.append('quantity', this.addProduct.quantity);
     formData.append('description', this.addProduct.description);
     formData.append('categoryName', this.addProduct.categoryName);
-    formData.append('productPic',this.images)
+    formData.append('productPic',this.images);
+    //formData.append('productPic',this.images)
+    //alert(formData);
+    //alert(this.images[0]);
     //console.log(formData.get('name'));
 
-    // this.retailerService.upload(formData).subscribe(data => {
-    //   alert(JSON.stringify(data));
-    // })
+    this.retailerService.upload(formData).subscribe(data => {
+      alert(JSON.stringify(data));
+    })
   }
 
   fetchCategory(){

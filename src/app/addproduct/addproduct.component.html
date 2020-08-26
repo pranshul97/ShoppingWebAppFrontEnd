@@ -12,6 +12,7 @@
         <input type="text" placeholder="Enter product model" name="model" [(ngModel)]="addProduct.model" required><br/> 
         <label>Quantity : </label><br/>  
         <input type="number" placeholder="Enter product quantity" name="quantity" [(ngModel)]="addProduct.quantity" required><br/>
+
         <label>Product Image : </label><br/><br/>
         <input type="file" name="image" (change)="onFileChange($event)" /><br/><br/>
        

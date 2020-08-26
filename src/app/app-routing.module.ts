@@ -23,7 +23,8 @@ const routes: Routes = [
   /*{path: 'app-display-all-products', component: DisplayAllProductsComponent},*/
   {path: 'app-display-all-products/:value' , component: DisplayAllProductsComponent},
   {path: 'app-retailerdashboard', component: RetailerdashboardComponent},
-  {path: 'app-homepage', component: HomepageComponent},
+  {path: '', component: HomepageComponent},
+  {path:'app-homepage', component: HomepageComponent},
   {path: 'app-addproducts', component: AddproductComponent}
 
 ];
