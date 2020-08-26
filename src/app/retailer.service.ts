@@ -26,5 +26,10 @@ export class RetailerService {
     return this.http.get(url);
   }
 
+  viewRetailerDetail(retailerId: any){
+    var url = 'http://localhost:8080/fetchRetailer?retailerId='+retailerId;
+    return this.http.get(url);
+  }
+
   
 }

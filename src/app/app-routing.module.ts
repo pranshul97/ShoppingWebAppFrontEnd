@@ -13,6 +13,10 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
 import { DeleteprofileComponent } from './deleteprofile/deleteprofile.component';
 
+import { RetailerdetailsComponent } from './retailerdetails/retailerdetails.component';
+import { CategoryComponent } from './category/category.component';
+import { BrandProductsComponent } from './brand-products/brand-products.component';
+
 
 const routes: Routes = [
   {path: 'app-register',component: RegistrationComponent},
@@ -27,7 +31,10 @@ const routes: Routes = [
   {path: '', component: HomepageComponent},
   {path:'app-homepage', component: HomepageComponent},
   {path: 'app-addproducts', component: AddproductComponent},
-  {path: 'app-deleteprofile',component: DeleteprofileComponent}
+  {path: 'app-deleteprofile',component: DeleteprofileComponent},
+  {path: 'app-retailerdetails', component: RetailerdetailsComponent},
+  {path: 'app-category/:categoryName',component: CategoryComponent},
+  {path:'app-brand-products/:brandName', component: BrandProductsComponent}
 
 ];
 

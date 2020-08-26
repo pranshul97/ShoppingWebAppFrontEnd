@@ -12,4 +12,10 @@ export class SearchProductsService {
     let url='http://localhost:8080/fetchByName';
     return this.http.post(url,text);
   }
+
+  
+  fetchProductByCategoryName(categoryName: any){
+    let url='http://localhost:8080/fetchByCategory';
+    return this.http.post(url,categoryName);
+  }
 }

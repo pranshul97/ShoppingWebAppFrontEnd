@@ -5,11 +5,27 @@
 
 <div class="row">
   <div class="column left">
-      <button class= "button">Retailer Details</button>
+      <button class= "button"><a [routerLink]="'/app-retailerdetails'">Retailer Details</a></button>
       <button class="button"> <a [routerLink]="'/app-addproducts'">My Orders</a></button>
       <button class="button" onclick="document.location='forget.html'" >Change Password</button> 
       <button class="button"><a [routerLink]="'/app-deleteprofile'">Delete Account</a></button> 
       <button type="submit" class="button" (click)="logout()">Logout</button>
+  </div>
+</div>
+
+  <div class="main">
+      <p>
+      ThankYou! for doing your business with us. Hope you have an amazing experience working with us.
+      </p>
+      <p>
+        We believe in providing the best of what we can give to our customers as well as to the ones doing business with us.
+      </p>
+    </div>
+
+<div class="dashboardcontainer">
+  <div class="column right">
+    <app-retailerdetails></app-retailerdetails>  
+
   </div>
 </div>
 
