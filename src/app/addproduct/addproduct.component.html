@@ -14,7 +14,7 @@
         <input type="number" placeholder="Enter product quantity" name="quantity" [(ngModel)]="addProduct.quantity" required><br/>
 
         <label>Product Image : </label><br/><br/>
-        <input type="file" name="image" (change)="onFileChange($event)" /><br/><br/>
+        <input type="file" name="image" (change)="onFileChange($event)" multiple/><br/><br/>
        
         <label>Category : </label>
         <select [(ngModel)]="addProduct.categoryName" name="category">

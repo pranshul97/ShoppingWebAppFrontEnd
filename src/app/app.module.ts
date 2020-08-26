@@ -21,7 +21,10 @@ import { RetailerdashboardComponent } from './retailerdashboard/retailerdashboar
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
-import { CategoryComponent } from './category/category.component';
+
+
+import { RetailerdetailsComponent } from './retailerdetails/retailerdetails.component';
+
 
 
 @NgModule({
@@ -41,7 +44,7 @@ import { CategoryComponent } from './category/category.component';
     DashboardComponent,
     HomepageComponent,
     AddproductComponent,
-    CategoryComponent
+    RetailerdetailsComponent
 
   ],
   imports: [
