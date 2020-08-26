@@ -14,6 +14,7 @@ import { AddproductComponent } from './addproduct/addproduct.component';
 import { DeleteprofileComponent } from './deleteprofile/deleteprofile.component';
 
 import { RetailerdetailsComponent } from './retailerdetails/retailerdetails.component';
+import { CategoryComponent } from './category/category.component';
 
 
 const routes: Routes = [
@@ -30,8 +31,8 @@ const routes: Routes = [
   {path:'app-homepage', component: HomepageComponent},
   {path: 'app-addproducts', component: AddproductComponent},
   {path: 'app-deleteprofile',component: DeleteprofileComponent},
-
-  {path: 'app-retailerdetails', component: RetailerdetailsComponent}
+  {path: 'app-retailerdetails', component: RetailerdetailsComponent},
+  {path: 'app-category/:categoryName',component: CategoryComponent}
 
 
 ];
