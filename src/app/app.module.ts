@@ -21,6 +21,7 @@ import { RetailerdashboardComponent } from './retailerdashboard/retailerdashboar
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
+import { CategoryComponent } from './category/category.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { AddproductComponent } from './addproduct/addproduct.component';
     RetailerdashboardComponent,
     DashboardComponent,
     HomepageComponent,
-    AddproductComponent
+    AddproductComponent,
+    CategoryComponent
 
   ],
   imports: [
