@@ -18,16 +18,21 @@ export class RetailerdetailsComponent implements OnInit {
   contactNumber: any;
   email: string;
 
-  retailerDetails: RetailerDetails = new RetailerDetails();
+  result: any;
+
+  retailerDetails: RetailerDetails;
 
 
-  constructor(private retailerService: RetailerService) { }
+  constructor(private retailerService: RetailerService) { 
+    this.retailerDetails = new RetailerDetails
+  }
 
   ngOnInit(): void {
     this.retailerId = sessionStorage.getItem('retailerId');
     this.retailerId = Number(this.retailerId);
     this.retailerService.viewRetailerDetail(this.retailerId).subscribe(data => {
       this.data=data;
+      this.result = this.data.retailers;
     })
     
   }

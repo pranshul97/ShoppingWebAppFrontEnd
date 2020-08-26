@@ -18,8 +18,9 @@
     opacity: 0.7; 
    }
 
-   main{
-     text-align: right;
+   .container p{
+     text-align: left;
+     
    }
   
 

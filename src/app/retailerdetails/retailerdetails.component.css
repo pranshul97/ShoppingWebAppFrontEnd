@@ -1,0 +1,17 @@
+table{
+    border-collapse: collapse;
+    width: 50%;
+    margin-right: auto;
+}
+
+table tr:hover {background-color: #ddd;}
+
+table th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: white;
+    color: black;
+}
+
+table tr:nth-child(even){background-color: #f2f2f2;}

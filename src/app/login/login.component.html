@@ -4,7 +4,7 @@
         <div class="container">
             <h2>Retailer Login Here</h2> 
             <label>Email : </label><br/>  
-            <input id="email" name="email" class="form-control" #email="ngModel" type="text" placeholder="Enter Email" name="email" [(ngModel)]="retailerLogin.email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required><br/> 
+            <input id="email" name="email" class="form-control" #email="ngModel" type="email" placeholder="Enter Email" name="email" [(ngModel)]="retailerLogin.email" required><br/> 
             <div *ngIf="email.invalid && (email.dirty || email.touched)"
             class="alert alert-danger">
             <div *ngIf="email.errors.required">
