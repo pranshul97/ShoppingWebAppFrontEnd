@@ -8,9 +8,9 @@ import { Retailer } from "./retailer";
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent implements OnInit {
-
-  retailer: Retailer = new Retailer();
   
+  retailer: Retailer = new Retailer();
+
   message: any;
 
   constructor(private service: RetailerService) { }
