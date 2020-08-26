@@ -1,3 +1,4 @@
+import { CartService } from './../cart.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,15 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartComponent implements OnInit {
 
-  id: number;
-  constructor() { }
+  id: any;
+  data: any;
+  result;
+  constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
-    this.id=sessionStorage.getItem(Number("userId"));
+    this.id=sessionStorage.getItem('userId');
+    this.id=Number(this.id);
+    this.cartService.cartProduct(this.id).subscribe(data => {
+      this.data=data;
+      this.result=this.data.list;
+      console.log(this.result);
+    })
   }
 
-
-
   
+
+
+
+
 
 }
