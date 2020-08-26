@@ -10,6 +10,7 @@ import { Retailer } from "./retailer";
 export class RegistrationComponent implements OnInit {
 
   retailer: Retailer = new Retailer();
+  
   message: any;
 
   constructor(private service: RetailerService) { }
