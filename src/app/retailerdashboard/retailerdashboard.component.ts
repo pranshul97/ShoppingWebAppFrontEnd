@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RetailerService } from '../retailer.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-retailerdashboard',
@@ -6,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./retailerdashboard.component.css']
 })
 export class RetailerdashboardComponent implements OnInit {
-
-  constructor() { }
+  retailerName: any;
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+    this.retailerName = sessionStorage.getItem('userName');
   }
+
+  logout(){
+    sessionStorage.clear();
+     sessionStorage.removeItem('retailerName');
+     sessionStorage.removeItem('retailerId');
+
+      this.router.navigate(['app-homepage'])
+  }
+
 
 }
