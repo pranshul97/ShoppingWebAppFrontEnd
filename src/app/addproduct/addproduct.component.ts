@@ -9,7 +9,7 @@ import { AddproductService } from "../addproduct.service";
   styleUrls: ['./addproduct.component.css']
 })
 export class AddproductComponent implements OnInit {
-  images: any;
+  images: any[]=[];
   retailerId: any;
   data: any;
   event: any;
@@ -29,7 +29,7 @@ export class AddproductComponent implements OnInit {
     /*for(let img of event.target.files){
       this.images+=img;
     }*/
-    this.images = event.target.files[0];
+    this.images = event.target.files;
   }
 
   upload(){
@@ -43,7 +43,10 @@ export class AddproductComponent implements OnInit {
     formData.append('quantity', this.addProduct.quantity);
     formData.append('description', this.addProduct.description);
     formData.append('categoryName', this.addProduct.categoryName);
-    formData.append('productPic',this.images);
+    for(let item of this.images){
+      formData.append('productPic',item);
+    }
+    
     //formData.append('productPic',this.images)
     //alert(formData);
     //alert(this.images[0]);

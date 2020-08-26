@@ -14,7 +14,7 @@ export class NavBarComponent implements OnInit {
   ngOnInit(): void{
     this.retailerService.fetchCategory().subscribe(data =>{
       this.categoryData=data;
-      alert(JSON.stringify(this.categoryData));
+      //alert(JSON.stringify(this.categoryData));
     })
   }
   productId: any;
