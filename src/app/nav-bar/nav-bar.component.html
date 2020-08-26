@@ -13,7 +13,7 @@
     <div>
         <a >Categories</a>
         <div class="dropdown" *ngFor="let cat of categoryData">
-            <a  >{{cat}}</a><br />
+            <a (click)="fetchProduct(cat)" >{{cat}}</a><br />
         </div>
     </div>
     <div>

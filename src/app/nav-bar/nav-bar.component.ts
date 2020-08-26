@@ -24,4 +24,8 @@ export class NavBarComponent implements OnInit {
     this.router.navigate(['app-display-product/'+this.productId]);
     
   }
+
+  fetchProduct(categoryName: any){
+    this.router.navigate(['app-category/'+categoryName]);
+  }
 }
