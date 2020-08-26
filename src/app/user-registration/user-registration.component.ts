@@ -14,7 +14,6 @@ import{ Status } from '../status'
 export class UserRegistrationComponent {
 
   user: User =new User();
- //status: any
   message: string
   ls: any;
 

@@ -12,12 +12,14 @@ export class UserLoginComponent  {
 
   login:Login = new Login();
   message: string;
+ 
 
   constructor(private userloginService: UserLoginService, private router: Router) { }
 
   loginuser(){
     this.userloginService.login(this.login).subscribe(data=>{
-          (JSON.stringify(data));
+         // (JSON.stringify(data));
+          
       if(data.status == 'SUCCESS'){
         let userId = data.userId;
         let userName = data.name;
