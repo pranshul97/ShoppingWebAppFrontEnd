@@ -15,6 +15,7 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {
     this.id=sessionStorage.getItem('userId');
+    this.id=Number(this.id);
     this.cartService.cartProduct(this.id).subscribe(data => {
       this.data=data;
       this.result=this.data.list;
