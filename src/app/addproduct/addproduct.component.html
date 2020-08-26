@@ -3,25 +3,25 @@
     <div class="container"> 
         <h2>Add Product Here!</h2>
         <label>Product Name: </label><br/>  
-        <input type="text" placeholder="Enter product name" name="name" required><br/> 
+        <input type="text" placeholder="Enter product name" name="name" [(ngModel)]="addProduct.name" required><br/> 
         <label>Brand Name : </label><br/>  
-        <input type="text" placeholder="Enter brand name" name="name" required><br/>   
+        <input type="text" placeholder="Enter brand name" name="name" [(ngModel)]="addProduct.brandName" required><br/>   
         <label>Product Price : </label><br/>  
-        <input type="text" placeholder="Enter product price" name="price" required><br/> 
+        <input type="text" placeholder="Enter product price" name="price" [(ngModel)]="addProduct.price" required><br/> 
         <label>Model: </label><br/>  
-        <input type="text" placeholder="Enter product model" name="model" required><br/> 
+        <input type="text" placeholder="Enter product model" name="model" [(ngModel)]="addProduct.model" required><br/> 
         <label>Quantity : </label><br/>  
-        <input type="text" placeholder="Enter product quantity" name="quantity" required><br/>
+        <input type="number" placeholder="Enter product quantity" name="quantity" [(ngModel)]="addProduct.quantity" required><br/>
         <label>Product Image : </label><br/>
-        <input type="file" name="image" (change)="onFileChange($event)" /><br/>
-        <button type="submit">Upload image</button>
+        <input type="file" name="image" (change)="onFileChange($event)" multiple/><br/>
+       
         <label>Category : </label>
-        <select name="category">
+        <select [(ngModel)]="addProduct.categoryName" name="category">
             <option *ngFor= "let d of data" value="{{d}}">{{d}}</option><br/>
-        </select>
+        </select><br/><br/>
         
         <label>Product Description</label><br/>
-        <textarea cols="80" rows="5" value="productDescription"></textarea><br/>
+        <textarea [(ngModel)]="addProduct.description" cols="80" rows="5" value="productDescription"></textarea><br/>
         <button type="submit">Add Product</button><br/>  
         
     </div>   

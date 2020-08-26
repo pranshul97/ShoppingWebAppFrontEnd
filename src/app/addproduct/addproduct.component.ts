@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RetailerService } from '../retailer.service';
+import { AddProduct } from "./addproduct";
+import { AddproductService } from "../addproduct.service";
 
 @Component({
   selector: 'app-addproduct',
@@ -7,13 +9,14 @@ import { RetailerService } from '../retailer.service';
   styleUrls: ['./addproduct.component.css']
 })
 export class AddproductComponent implements OnInit {
-  name: any;
+  images: any;
   retailerId: any;
   data: any;
   event: any;
+  message: any;
 
-
-  constructor(private retailerService: RetailerService) { }
+  addProduct: AddProduct = new AddProduct();
+  constructor(private retailerService: RetailerService, private productService: AddproductService ) { }
 
   ngOnInit(): void {
     this.retailerId = sessionStorage.getItem('retailerId');
@@ -23,14 +26,28 @@ export class AddproductComponent implements OnInit {
   }
 
   onFileChange(event){
-    this.name = event.target.files[0];
+    /*for(let img of event.target.files){
+      this.images+=img;
+    }*/
+    this.images = event.target.files[0];
   }
 
   upload(){
+    alert(JSON.stringify(this.addProduct))
     let formData : FormData = new FormData();
     formData.append('retailerId', this.retailerId);
-    formData.append('name', this.name);
-    console.log(formData.get('name'));
+    formData.append('brandName', this.addProduct.brandName);
+    formData.append('name', this.addProduct.name);
+    formData.append('price', this.addProduct.price);
+    formData.append('model', this.addProduct.model);
+    formData.append('quantity', this.addProduct.quantity);
+    formData.append('description', this.addProduct.description);
+    formData.append('categoryName', this.addProduct.categoryName);
+    formData.append('productPic',this.images);
+    //formData.append('productPic',this.images)
+    //alert(formData);
+    //alert(this.images[0]);
+    //console.log(formData.get('name'));
 
     this.retailerService.upload(formData).subscribe(data => {
       alert(JSON.stringify(data));
@@ -44,12 +61,17 @@ export class AddproductComponent implements OnInit {
     //     alert(d);
     //   }
     // })
-   
-
   }
 
+  productAdd(){
+    this.productService.addProduct(this.addProduct).subscribe(
+      data => {
+       alert(JSON.stringify(this.addProduct));
+      }
+    )
+    this.message = "Retailer registered successfully";
 
 
-  
+  }
 
 }

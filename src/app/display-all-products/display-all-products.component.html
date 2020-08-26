@@ -1,69 +1,50 @@
 <div class="mid-tab" *ngIf="data.status=='SUCCESS'; else notPresent">
     <div class="col1">
         <div class="portion">
-            <h2 style="text-align: center;">Sort</h2>
-            <h3>Names of Products</h3>
-            <form>
-                <input type="checkbox" value="Pr1">
-                <label> Product1</label><br>
-                <input type="checkbox" value="Pr2">
-                <label> Product2</label><br>
-                <input type="checkbox" value="Pr3">
-                <label> Product3</label><br>
-                <input type="checkbox" value="Pr4">
-                <label> Product4</label><br>
+            <h2 style="text-align: center;">Filter Products</h2>
+            <h3>Filter By Category</h3>
+            <form style="font-size: 25px;">
+                <div *ngFor="let item of data.list">
+                    <input (click)="check(item.categoryId)" type="checkbox" value="cate">
+                    <label>{{item.categoryName}}</label><br>
+                </div>
                 <input type="submit" value="Apply" />
             </form>
 
-            <h3>Price</h3>
-            <form>
-                <input type="checkbox" value="Pri1">
-                <label>100-200</label><br>
-                <input type="checkbox" value="Pri2">
-                <label> 200-300</label><br>
-                <input type="checkbox" value="Pri3">
-                <label> 300-400</label><br>
-                <input type="checkbox" value="Pri4">
-                <label> 400-500</label><br>
+            <h3>Filter by Price</h3>
+            <form (ngSubmit)="applyPrice()" style="font-size: 15px;">
+                <div>
+                    Minimum Value: <input type="number" name="min" [(ngModel)]=price.minval style="font-size: 15px;"/>
+                    Maximum Value: <input type="number" name="max" [(ngModel)]=price.maxval style="font-size: 15px;"/><br>
+                </div>
                 <input type="submit" value="Apply" />
             </form>
-        </div>
-        <div class="portion">
-            <h2 style="text-align: center;">Filter</h2>
-            <h3>Brand Names</h3>
-            <form>
-                <input type="checkbox" value="br1">
-                <label> Brand 1</label><br>
-                <input type="checkbox" value="br2">
-                <label> Brand 2</label><br>
-                <input type="checkbox" value="br3">
-                <label> Brand 3</label><br>
-                <input type="checkbox" value="br4">
-                <label> Brand 4</label><br>
-                <input type="submit" value="Apply" />
-            </form>
-
-            <h3>Price</h3>
-            <form>
-                <input type="checkbox" value="bpr1">
-                <label>100-200</label><br>
-                <input type="checkbox" value="bpr2">
-                <label> 200-300</label><br>
-                <input type="checkbox" value="bpr3">
-                <label> 300-400</label><br>
-                <input type="checkbox" value="bpr4">
-                <label> 400-500</label><br>
-                <input type="submit" value="Apply" />
+            <h3>Filter by Brands</h3>
+            <form style="font-size: 25px;">
+                <div *ngFor="let item of data.list">
+                    <input (click)="check(item.brandName)" type="checkbox" value="brd">
+                    <label>{{item.brandName}}</label><br>
+                </div>
             </form>
         </div>
     </div>
 
+
     <div class="col2" *ngFor="let item of data.list">
-        <div class="portion1">
-            <h2 style="font-family: 'Baloo Tamma 2', cursive;">Product Name: <a routerLink="/app-display-product/{{item.productId}}" style="text-decoration: none;">{{item.name}}</a></h2>
-            <h2 style="font-family: 'Baloo Tamma 2', cursive;">By: {{item.brandName}}</h2>
-            <h2 style="font-family: 'Baloo Tamma 2', cursive;">Price: {{item.price}}</h2>
+        <div class="portion1" *ngIf="item.price>min && item.price<=max">
+            <div class="disp1" >
+                <h2 style="font-family: 'Baloo Tamma 2', cursive;">Product Name: <a routerLink="/app-display-product/{{item.productId}}" style="text-decoration: none;">{{item.name}}</a></h2>
+                <h2 style="font-family: 'Baloo Tamma 2', cursive;">By: {{item.brandName}}</h2>
+                <h2 style="font-family: 'Baloo Tamma 2', cursive;">Price: {{item.price}}</h2>
+            </div>
+            <div class="disp2">
+                <button (click)="addToCompare(item.productId)" type="submit">Add to Compare</button>
+                <button type="submit">Add To Cart</button>
+            </div>
         </div>
+    </div>
+    <div>
+        <button class="but" (click)=moveToCompare()>See comparison</button>
     </div>
 </div>
 <ng-template #notPresent>

@@ -3,6 +3,5 @@ export class LoginRetailerStatus {
     message: string;
     retailerId: number;
     name: string;
-    
      
  }

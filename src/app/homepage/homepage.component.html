@@ -1,2 +1,49 @@
 <h3 id="message" style="color: #FFCE2B;">Welcome back, {{ userName }}</h3>
+
+<script>
+    $(function(){
+        var index=0;
+        var pics=[
+            "img1.jpg",
+            "img3.jpg",
+            "img4.jpg"
+        ];
+        $("#prev").click(function(){
+            //alert("previous pressed"+index);
+            index=(index-1+pics.length)%(pics.length);
+            $("#images").attr("src",pics[index]);
+        })
+        $("#next").click(function(){
+            //alert("next pressed"+index);
+            index=(index+1)%(pics.length);
+            $("#images").attr("src",pics[index]);
+        })
+    })
+</script>
+
+<div class="show-container">
+    <a id="prev" class="prev">&#10094;</a>
+    <img id="images" src="./assets/img/img1.jpg">
+    <a id="next" class="next">&#10095;</a>
+</div>
+<div class="top-products">
+    <h1>Top Products</h1>
+    <div>
+        <img src="./assets/img/img1.jpg">
+        <h3>One Plus Nord 1</h3>
+    </div>
+    <div>
+        <img src="./assets/img/img2.jpeg">
+        <h3>One Plus Nord 2</h3>
+    </div>
+    <div>
+        <img src="./assets/img/img3.jpg">
+        <h3>One Plus Nord 3</h3>
+    </div>
+    <div>
+        <img src="./assets/img/img4.jpg">
+        <h3>One Plus Nord 4</h3>
+    </div>
+</div>
+
 <button type="submit" class="button" (click)="logout()">Logout</button>
