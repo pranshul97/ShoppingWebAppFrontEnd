@@ -1,3 +1,4 @@
+import { CartComponent } from './cart/cart.component';
 import { CategoryComponent } from './category/category.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -48,7 +49,8 @@ import { DeleteprofileComponent } from './deleteprofile/deleteprofile.component'
     AddproductComponent,
     RetailerdetailsComponent,
     CategoryComponent,
-    DeleteprofileComponent
+    DeleteprofileComponent,
+    CartComponent
 
   ],
   imports: [
