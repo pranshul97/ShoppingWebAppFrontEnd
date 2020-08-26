@@ -18,4 +18,14 @@ export class SearchProductsService {
     let url='http://localhost:8080/fetchByCategory';
     return this.http.post(url,categoryName);
   }
+
+  fetchBrands(){
+    let url='http://localhost:8080/fetchBrandNames';
+    return this.http.get(url);
+  }
+
+  fetchProductsByBrandName(brandName: any){
+    let url='http://localhost:8080/fetchByBrandName';
+    return this.http.post(url,brandName);
+  }
 }

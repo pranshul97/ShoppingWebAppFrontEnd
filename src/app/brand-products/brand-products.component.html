@@ -1,1 +1,54 @@
-<p>brand-products works!</p>
+<div class="mid-tab" *ngIf="data.status=='SUCCESS'; else notPresent">
+    <div class="col1">
+        <div class="portion">
+            <h2 style="text-align: center;">Filter Products</h2>
+            <h3>Filter By Category</h3>
+            <form style="font-size: 25px;">
+                <div *ngFor="let item of allCategories">
+                    <input (change)="check($event,item)" type="checkbox" value="cate">
+                    <label>{{item}}</label><br>
+                </div>
+                <input type="submit" value="Apply" (click)="applyCategory()"/>
+            </form>
+
+            <h3>Filter by Price</h3>
+            <form (ngSubmit)="applyPrice()" style="font-size: 15px;">
+                <div>
+                    Minimum Value: <input type="number" name="min" [(ngModel)]=price.minval style="font-size: 15px;"/>
+                    Maximum Value: <input type="number" name="max" [(ngModel)]=price.maxval style="font-size: 15px;"/><br>
+                </div>
+                <input type="submit" value="Apply" />
+            </form>
+            <h3>Filter by Brands</h3>
+            <form style="font-size: 25px;">
+                <div *ngFor="let item of allBrands">
+                    <input (change)="check1($event,item)" type="checkbox" value="brd">
+                    <label>{{item}}</label><br>
+                </div>
+                <input type="submit" value="Apply" (click)="applyBrands()"/>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="col2" *ngFor="let item of data.list">
+        <div class="portion1" *ngIf="item.price>min && item.price<=max && categoriesSelected.includes(item.categoryName) && brandsSelected.includes(item.brandName)">
+            <div class="disp1" >
+                <h2 style="font-family: 'Baloo Tamma 2', cursive;">Product Name: <a routerLink="/app-display-product/{{item.productId}}" style="text-decoration: none;">{{item.name}}</a></h2>
+                <h2 style="font-family: 'Baloo Tamma 2', cursive;">By: {{item.brandName}}</h2>
+                <h2 style="font-family: 'Baloo Tamma 2', cursive;">Price: {{item.price}}</h2>
+            </div>
+            <div class="disp2">
+                <button (click)="addToCompare(item.productId)" type="submit">Add to Compare</button>
+                <button type="submit">Add To Cart</button>
+            </div>
+        </div>
+    </div>
+    <div>
+        <button class="but" (click)=moveToCompare()>See comparison</button>
+    </div>
+</div>
+<ng-template #notPresent>
+    <h2 style="text-align: center;">Sorry!! no such product in our warehouse.</h2>
+    <img style="align-content: center; width: 50%;height: 50%;margin-left: 25%;" src="assets/img/sad-emoji.png" >
+</ng-template>
