@@ -25,7 +25,7 @@ import { AddproductComponent } from './addproduct/addproduct.component';
 
 
 import { RetailerdetailsComponent } from './retailerdetails/retailerdetails.component';
-import { CartComponent } from './cart/cart.component';
+import { DeleteprofileComponent } from './deleteprofile/deleteprofile.component';
 
 
 
@@ -48,7 +48,7 @@ import { CartComponent } from './cart/cart.component';
     AddproductComponent,
     RetailerdetailsComponent,
     CategoryComponent,
-    CartComponent
+    DeleteprofileComponent
 
   ],
   imports: [

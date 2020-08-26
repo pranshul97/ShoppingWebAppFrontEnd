@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   }
 
   loginRetailer(){
-    alert(JSON.stringify(this.retailerLogin));
+    //alert(JSON.stringify(this.retailerLogin));
 
     this.service.login(this.retailerLogin).subscribe(
       data => {

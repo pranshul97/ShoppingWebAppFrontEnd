@@ -1,6 +1,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&family=PT+Sans&display=swap" rel="stylesheet">
 
-    <form (ngSubmit)="addRetailer()">  
+    <form name = "f1" (ngSubmit)="addRetailer()">  
         <div class="container"> 
             <h2>Hey Retailer!Welcome to<br/>
                 new business destination</h2>
@@ -11,10 +11,14 @@
             <div *ngIf="name.invalid && (name.dirty || name.touched)"
             class="alert alert-danger">
             <div *ngIf="name.errors.required">
+                <span style="color:red">
                 Name is required.
+                </span>
             </div>
             <div *ngIf="name.errors.minlength">
+                <span style="color:red">
                 Name must be at least 4 characters long.
+                </span>
             </div>
             </div>
             <label>Contact Number : </label><br/>  
@@ -22,10 +26,14 @@
             <div *ngIf="number.invalid && (number.dirty || number.touched)"
             class="alert alert-danger">
             <div *ngIf="number.errors.required">
+                <span style="color:red">
                 Contact Number is required.
+                </span>
             </div>
             <div *ngIf="number.errors.minlength">
+                <span style="color:red">
                 Contact Number must be 10 characters long.
+                </span>
             </div>
             </div> 
             <label>Email : </label><br/>  
@@ -33,7 +41,9 @@
             <div *ngIf="email.invalid && (email.dirty || email.touched)"
             class="alert alert-danger">
             <div *ngIf="email.errors.required">
+                <span style="color:red">
                 Email is required.
+                </span>
             </div>
             </div>
             <label>Password : </label><br/> 
@@ -41,10 +51,14 @@
             <div *ngIf="password.invalid && (password.dirty || password.touched)"
             class="alert alert-danger">
             <div *ngIf="password.errors.required">
+                <span style="color:red">
                 Password is required.
+                </span>
             </div>
             <div *ngIf="password.errors.minlength">
+                <span style="color:red">
                 Password must be at least 4 characters long.
+                </span>
             </div>
             </div>
             <label> Confirm Password : </label><br/>  
@@ -52,10 +66,14 @@
             <div *ngIf="password.invalid && (password.dirty || password.touched)"
             class="alert alert-danger">
             <div *ngIf="password.errors.required">
+                <span style="color:red">
                 Password is required.
+                </span>
             </div>
             <div *ngIf="password.errors.minlength">
+                <span style="color:red">
                 Password must be at least 4 characters long.
+                </span>
             </div>
             </div>
             <button type="submit">Register</button><br/>  

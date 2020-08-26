@@ -11,6 +11,7 @@ import { RetailerdashboardComponent } from './retailerdashboard/retailerdashboar
 
 import { HomepageComponent } from './homepage/homepage.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
+import { DeleteprofileComponent } from './deleteprofile/deleteprofile.component';
 
 
 const routes: Routes = [
@@ -25,7 +26,8 @@ const routes: Routes = [
   {path: 'app-retailerdashboard', component: RetailerdashboardComponent},
   {path: '', component: HomepageComponent},
   {path:'app-homepage', component: HomepageComponent},
-  {path: 'app-addproducts', component: AddproductComponent}
+  {path: 'app-addproducts', component: AddproductComponent},
+  {path: 'app-deleteprofile',component: DeleteprofileComponent}
 
 ];
 
