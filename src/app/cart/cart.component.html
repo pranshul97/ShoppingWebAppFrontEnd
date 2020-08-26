@@ -1,1 +1,46 @@
-<p>cart works!</p>
+<div class="mid-tab">
+    <div class="col1">
+        <h1 style="text-align: center;">Cart Items</h1>
+        <span *ngFor="let item of result">
+            <div class="mid-tab">
+                <div class="part-img">
+                    <img src="img2.jpeg">
+                </div>
+                <div class="part-name">
+                    <h3>{{item.name}}</h3>
+                </div>
+                <div class="part-price">
+                    <h3>{{item.price}}}}</h3>
+                </div>
+                <div class="part-quantity">
+                    <div style="width: 30%;float: left;">
+                        <button id="minus" type="button">-</button>
+                    </div>
+                    <h3 id="quantity">1</h3>
+                    <div style="width: 30%;float: left;">
+                        <button id="plus" type="button">+</button>
+                    </div>
+                </div>
+            </div>
+        </span>
+        <div class="mid-tab">
+            <div class="cart1">
+                <button type="submit">Continue Shopping</button>
+            </div>
+            <div class="cart1">
+                <button type="submit">Place Order</button>
+            </div>
+        </div>
+    </div>
+    <div class="col2">
+        <h1 style="text-align: center;">Cart Amount</h1>
+        <div class="mid-tab">
+            <div class="cart">
+                <h3>Total Cart Amount: </h3>
+            </div>
+            <div class="cart">
+                <h3>&#8377 83997</h3>
+            </div>
+        </div>
+    </div>
+</div>
