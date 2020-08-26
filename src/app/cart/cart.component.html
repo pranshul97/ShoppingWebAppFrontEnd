@@ -1,31 +1,33 @@
 <div class="mid-tab">
     <div class="col1">
         <h1 style="text-align: center;">Cart Items</h1>
-        <span *ngFor="let item of result">
-            <div class="mid-tab">
-                <div class="part-img">
-                    <img src="img2.jpeg">
-                </div>
-                <div class="part-name">
-                    <h3>{{item.name}}</h3>
-                </div>
-                <div class="part-price">
-                    <h3>{{item.price}}}}</h3>
-                </div>
-                <div class="part-quantity">
-                    <div style="width: 30%;float: left;">
-                        <button id="minus" type="button">-</button>
+        <span *ngIf="data.status=='SUCCESS'; else notPresent">
+            <span *ngFor="let item of result">
+                <div class="mid-tab">
+                    <div class="part-img">
+                        <img src="img2.jpeg">
                     </div>
-                    <h3 id="quantity">1</h3>
-                    <div style="width: 30%;float: left;">
-                        <button id="plus" type="button">+</button>
+                    <div class="part-name">
+                        <h3>{{item.name}}</h3>
+                    </div>
+                    <div class="part-price">
+                        <h3>{{item.price}}</h3>
+                    </div>
+                    <div class="part-quantity">
+                        <div style="width: 30%;float: left;">
+                            <button id="minus" type="button">-</button>
+                        </div>
+                        <h3 id="quantity">1</h3>
+                        <div style="width: 30%;float: left;">
+                            <button id="plus" type="button">+</button>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </span>
         </span>
         <div class="mid-tab">
             <div class="cart1">
-                <button type="submit">Continue Shopping</button>
+                <button type="submit" [routerLink]="['app-homepage']">Continue Shopping</button>
             </div>
             <div class="cart1">
                 <button type="submit">Place Order</button>
@@ -45,5 +47,9 @@
     </div>
 
 </div>
+<ng-template #notPresent>
+    <h2 style="text-align: center;">Sorry!! Nothing in the cart. Please do some shopping</h2>
+    <img style="align-content: center; width: 50%;height: 50%;margin-left: 25%;" src="assets/img/sad-emoji.png" >
+</ng-template>
 
 

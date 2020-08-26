@@ -1,0 +1,105 @@
+.mid-tab{
+    margin: 10px;
+    font-family: 'Baloo Tamma 2', cursive;
+}
+.mid-tab:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.col1{
+    float: left;
+    width: 29%;
+    margin-right: 5px;
+}
+
+.portion{
+    padding: 10px;
+    border: 2px black solid;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    /*height: 300px;*/
+    overflow: auto;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.portion:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.portion form{
+    margin-bottom: 10px;
+}
+
+.col2{
+    float: right;
+    width: 70%;
+}
+
+.portion1{
+    padding: 10px;
+    border: 2px black solid;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+.portion1:hover{
+    box-shadow: 0 8px 16px 0 rgba(215, 248, 24, 0.719);
+}
+.portion1:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.disp1{
+    float: left;
+    width: 80%;
+}
+.disp2{
+    float: left;
+    width: 20%;
+}
+
+.disp2 button{
+    width: 100%;
+    height: 60px;
+    outline: none;
+    background-color: #FFCE2B;
+    margin-top: 10%;
+    color: black;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Baloo Tamma 2', cursive;
+    padding: 10px;
+    /*box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;*/
+}
+.disp2 button:hover{
+    cursor: pointer;
+}
+
+.but{
+    width: 69%;
+    float: right;
+    height: 60px;
+    outline: none;
+    background-color: #FFCE2B;
+    /*margin-top: 10%;*/
+    margin-right: 10px;
+    color: black;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Baloo Tamma 2', cursive;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+.but:hover{
+    cursor: pointer;
+    box-shadow: 0 8px 16px 0 rgba(215, 248, 24, 0.719);
+}

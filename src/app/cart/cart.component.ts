@@ -8,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartComponent implements OnInit {
 
+  totalPrice: number;
   id: any;
   data: any;
   result;
+  list: number[] = [];
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
@@ -20,10 +22,17 @@ export class CartComponent implements OnInit {
       this.data=data;
       this.result=this.data.list;
       console.log(this.result);
+      this.list=this.result;
+
+      for(let pr of this.list){
+        this.totalPrice=this.totalPrice;
+        //alert(it);
+      }
     })
   }
 
-  
+    
+
 
 
 

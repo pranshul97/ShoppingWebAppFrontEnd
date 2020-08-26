@@ -1,6 +1,9 @@
 <div class="topnav">
     <div>
-        <a routerLink="/">Home</a>
+        <a >Brands</a>
+        <div class="dropdown" *ngFor="let brand of brandsData">
+            <a (click)="fetchByBrand(brand)" >{{brand}}</a><br />
+        </div>
     </div>
     <div>
         <a >Products</a>
