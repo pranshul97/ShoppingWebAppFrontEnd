@@ -4,11 +4,11 @@
             <h2 style="text-align: center;">Filter Products</h2>
             <h3>Filter By Category</h3>
             <form style="font-size: 25px;">
-                <div *ngFor="let item of data.list">
-                    <input (click)="check(item.categoryId)" type="checkbox" value="cate">
-                    <label>{{item.categoryName}}</label><br>
+                <div *ngFor="let item of allCategories">
+                    <input (change)="check($event,item)" type="checkbox" value="cate">
+                    <label>{{item}}</label><br>
                 </div>
-                <input type="submit" value="Apply" />
+                <input type="submit" value="Apply" (click)="applyCategory()"/>
             </form>
 
             <h3>Filter by Price</h3>
@@ -21,17 +21,18 @@
             </form>
             <h3>Filter by Brands</h3>
             <form style="font-size: 25px;">
-                <div *ngFor="let item of data.list">
-                    <input (click)="check(item.brandName)" type="checkbox" value="brd">
-                    <label>{{item.brandName}}</label><br>
+                <div *ngFor="let item of allBrands">
+                    <input (change)="check1($event,item)" type="checkbox" value="brd">
+                    <label>{{item}}</label><br>
                 </div>
+                <input type="submit" value="Apply" (click)="applyBrands()"/>
             </form>
         </div>
     </div>
 
 
     <div class="col2" *ngFor="let item of data.list">
-        <div class="portion1" *ngIf="item.price>min && item.price<=max">
+        <div class="portion1" *ngIf="item.price>min && item.price<=max && categoriesSelected.includes(item.categoryName) && brandsSelected.includes(item.brandName)">
             <div class="disp1" >
                 <h2 style="font-family: 'Baloo Tamma 2', cursive;">Product Name: <a routerLink="/app-display-product/{{item.productId}}" style="text-decoration: none;">{{item.name}}</a></h2>
                 <h2 style="font-family: 'Baloo Tamma 2', cursive;">By: {{item.brandName}}</h2>
