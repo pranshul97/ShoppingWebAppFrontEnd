@@ -8,11 +8,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./retailerdashboard.component.css']
 })
 export class RetailerdashboardComponent implements OnInit {
+  retailerId: any;
   retailerName: any;
+  data: any;
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-    this.retailerName = sessionStorage.getItem('userName');
+    // this.retailerName = sessionStorage.getItem('userName');
   }
 
   logout(){
@@ -22,6 +24,5 @@ export class RetailerdashboardComponent implements OnInit {
 
       this.router.navigate(['app-homepage'])
   }
-
 
 }
