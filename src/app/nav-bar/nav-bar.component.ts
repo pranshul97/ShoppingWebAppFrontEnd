@@ -20,7 +20,7 @@ export class NavBarComponent implements OnInit {
     })
     this.prodService.fetchBrands().subscribe(data =>{
       this.brandsData=data;
-      alert(JSON.stringify(this.brandsData));
+      //alert(JSON.stringify(this.brandsData));
     })
 
   }
