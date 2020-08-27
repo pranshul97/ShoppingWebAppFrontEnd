@@ -14,7 +14,7 @@ export class ViewOrdersComponent implements OnInit {
   orderDate: any;
   quantity: number;
 
-  result: any;
+  result: OrderDetails=new OrderDetails();
 
   orderDetails: OrderDetails
 
@@ -24,9 +24,10 @@ export class ViewOrdersComponent implements OnInit {
 
   ngOnInit(): void {
     this.userId = sessionStorage.getItem('userId');
-
+    alert(this.userId);
     this.viewOrdersService.viewOrderDetails(this.userId).subscribe(data=> {
         this.data=data;
+        //alert(JSON.stringify(this.data[0]));
         this.result=this.data[0];
 
       })
