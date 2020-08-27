@@ -1,82 +1,16 @@
-<!--<script>
-    function show(){
-        document.getElementById("compareproducts").style.visibility="visible";
-    }
-</script>
-
-<div id="comparebutton">
-    <button id = "addbutton" (click)="compareProductDetails()">Show product for     Comparison</button>
-</div>-->
 <div id="compareproducts">
     <div class="comparing">
-        <!--<div class="compareproductpic">
-            <img id="imgs" src="./assets/img/img1.jpg">
-        </div>-->
         <div class="compareproductpicdesc">
-            <span *ngFor="let item of result">
-                 <table id="compareTable" *ngIf="flag">
-                    <th>Name</th><th>Brand Name</th><th>Model</th><th>Price</th>
-                        <tr>
+            <table id="compareTable" *ngIf="flag">
+                <th>Name</th><th>Brand Name</th><th>Model</th><th>Price</th>
+                        <tr *ngFor="let item of result">
                             <td>{{ item.name }}</td>
                             <td>{{ item.brandName }}</td>
                             <td>{{ item.model }}</td>
-                            <!--<td>{{ item.description }}</td>-->
                             <td>{{ item.price }}</td>
                         </tr>
-                </table>
-            </span>
+            </table>
         </div>
     </div>
-    <!--<div class="comparing">
-        <div class="compareproductpic">
-            <img id="imgs" src="/src/assets/img/magnifying.png">
-        </div>
-        <div class="compareproductpicdesc">
-            <table>
-                <th>Name</th><th>Brand Name</th><th>Model</th><th>Description</th><th>Price</th>
-                <tr *ngFor="let pro2 of compareProduct2">
-                    <td>{{ pro2.name }}</td>
-                    <td>{{ pro2.brandName }}</td>
-                    <td>{{ pro2.model }}</td>
-                    <td>{{ pro2.description }}</td>
-                    <td>{{ pro2.price }}</td>
-                </tr>
-            </table>
-        </div>
-    </div> -->
-    <!--<div class="comparing">
-        <div class="compareproductpic">
-            <img id="imgs" src="download1.jpg">
-        </div>
-        <div class="compareproductpicdesc">
-            <table>
-                <th>Name</th><th>Brand Name</th><th>Model</th><th>Description</th><th>Price</th>
-                <tr *ngFor="let pro3 of compareProduct3">
-                    <td>{{ pro3.name }}</td>
-                    <td>{{ pro3.brandName }}</td>
-                    <td>{{ pro3.model }}</td>
-                    <td>{{ pro3.description }}</td>
-                    <td>{{ pro3.price }}</td>
-                </tr>
-            </table>
-        </div>
-    </div> 
-    <div class="comparing">
-        <div class="compareproductpic">
-            <img id="imgs" src="download1.jpg">
-        </div>
-        <div class="compareproductpicdesc">
-            <table>
-                <th>Name</th><th>Brand Name</th><th>Model</th><th>Description</th><th>Price</th>
-                <tr *ngFor="let pro4 of compareProduct4">
-                    <td>{{ pro4.name }}</td>
-                    <td>{{ pro4.brandName }}</td>
-                    <td>{{ pro4.model }}</td>
-                    <td>{{ pro4.description }}</td>
-                    <td>{{ pro4.price }}</td>
-                </tr>
-            </table>
-        </div>
-    </div> --> 
 </div>
 
