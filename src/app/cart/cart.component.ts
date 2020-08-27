@@ -47,6 +47,10 @@ export class CartComponent implements OnInit {
     this.totalPrice=this.totalPrice+Number(price);
   }
 
+  placeOrder(){
+    sessionStorage.setItem('totalPrice', this.totalPrice.toString());
+  }
+
     
 
 

@@ -14,7 +14,7 @@
         </div>-->
         <div class="compareproductpicdesc">
             <span *ngFor="let item of result">
-                 <table *ngIf="flag">
+                 <table id="compareTable" *ngIf="flag">
                     <th>Name</th><th>Brand Name</th><th>Model</th><th>Price</th>
                         <tr>
                             <td>{{ item.name }}</td>

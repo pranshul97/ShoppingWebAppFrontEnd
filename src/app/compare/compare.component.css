@@ -63,3 +63,30 @@ td{
     padding: 25px;
     text-align: center;
 }
+
+#compareTable{
+    top : -8px ;
+    border-collapse: collapse;
+      width: 95%;
+    }
+    
+#compareTable td, #tt th{
+    border: 1px solid black;
+      padding: 8px;
+    }
+    
+#compareTable td{
+    text-align: center;
+    }
+    
+#compareTable tr:nth-child(even){background-color: #f2f2f2;}
+
+#compareTable tr:hover {background-color: #ddd;}
+
+#compareTable th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: center;
+      background-color: #FFCE2B;
+      color: black;
+}

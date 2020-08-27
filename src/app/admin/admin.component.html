@@ -3,7 +3,7 @@
 </div>
 
 
-    <div id="Buttons">
+    <div id="buttons" style="width:80%">
         <button class="bts" (click)="showProduct()"> Show Products </button>button>
         <button class="bts" (click)="showRetailers()"> Show Retailers </button>button>
         <button class="bts" (click)="showProductCategories()"> Show Categories </button>button>
@@ -11,7 +11,7 @@
     <span *ngIf="productFlag">
         <div class="table">
             <span *ngFor="let item in productList">
-                <table>
+                <table id="details">
                     <th>Product Id</th><th>Product Name</th><th>Model</th><th>Brand Name</th><th>Price</th>
                     <tr>
                         <td>{{item.productId}}</td>
@@ -28,7 +28,7 @@
     <span *ngIf="retailerFlag">
         <div class="table">
             <span *ngFor="let item in retailerList">
-                <table>
+                <table id="details">
                     <th>Reatiler Id</th><th>Reatiler Name</th><th>Email</th><th>contactName</th>
                     <tr>
                         <td>{{item.retailerId}}</td>
@@ -44,7 +44,7 @@
     <span *ngIf="categoryFlag">
         <div class="table">
             <span *ngFor="let item in categoryList">
-                <table>
+                <table id="details">
                     <th>Category Id</th><th>Category Name</th>
                     <tr>
                         <td>{{item.categoryId}}</td>
