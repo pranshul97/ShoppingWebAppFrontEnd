@@ -19,6 +19,7 @@ import { BrandProductsComponent } from './brand-products/brand-products.componen
 import { CartComponent } from './cart/cart.component';
 import { PaymentComponent } from './payment/payment.component';
 import { FinaldisplayComponent } from './finaldisplay/finaldisplay.component';
+import { ViewOrdersComponent } from './view-orders/view-orders.component';
 
 
 const routes: Routes = [
@@ -40,7 +41,9 @@ const routes: Routes = [
   {path:'app-brand-products/:brandName', component: BrandProductsComponent},
   {path: 'app-cart', component: CartComponent},
   {path: 'app-payment', component: PaymentComponent},
-  {path: 'app-finaldisplay', component: FinaldisplayComponent}
+  {path: 'app-finaldisplay', component: FinaldisplayComponent},
+  {path: 'app-view-orders', component: ViewOrdersComponent}
+
 ];
 
 @NgModule({
