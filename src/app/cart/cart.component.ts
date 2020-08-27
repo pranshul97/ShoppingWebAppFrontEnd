@@ -27,7 +27,7 @@ export class CartComponent implements OnInit {
     this.cartService.cartProduct(this.id).subscribe(data => {
       this.data=data;
       this.result=this.data.list;
-      console.log(this.result);
+      //console.log(this.result);
       // this.list=this.result;
 
       for(let pr of this.result){
