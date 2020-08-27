@@ -19,11 +19,11 @@
 
 .comparing{
     width: 100%;
-    padding: 5px;
+    
     padding-bottom: 80px;
 }
 
-.compareproductpic{
+/*.compareproductpic{
     padding: 10px;
     margin-bottom: 10px;
     position: relative;
@@ -32,10 +32,10 @@
     width: 15%;
     height: 200px;
     float: left;
-}
+}*/
 
 .compareproductpicdesc{
-    padding-left: 10px;
+    
     text-align: justify; 
     font-size: 25px; 
 }
@@ -67,7 +67,8 @@ td{
 #compareTable{
     top : -8px ;
     border-collapse: collapse;
-      width: 95%;
+      width: 100%;
+      
     }
     
 #compareTable td, #tt th{
@@ -87,7 +88,7 @@ td{
       padding-top: 12px;
       padding-bottom: 12px;
       text-align: center;
-      background-color: #FFCE2B;
+      background-color: teal;
       color: black;
       border: 1px solid black;
 }
