@@ -1,30 +1,12 @@
 <!--<h3 id="message" style="color: #FFCE2B;">Welcome back, {{ userName }}</h3>-->
-
-<script>
-    $(function(){
-        var index=0;
-        var pics=[
-            "img1.jpg",
-            "img3.jpg",
-            "img4.jpg"
-        ];
-        $("#prev").click(function(){
-            //alert("previous pressed"+index);
-            index=(index-1+pics.length)%(pics.length);
-            $("#images").attr("src",pics[index]);
-        })
-        $("#next").click(function(){
-            //alert("next pressed"+index);
-            index=(index+1)%(pics.length);
-            $("#images").attr("src",pics[index]);
-        })
-    })
-</script>
-
+<!--https://cdn.pixabay.com/photo/2015/04/20/13/36/objects-731426_960_720.jpg-->
+<!--https://cdn.pixabay.com/photo/2015/11/07/11/46/fashion-1031469_960_720.jpg-->
+<!--https://cdn.pixabay.com/photo/2013/11/14/12/34/neckties-210347_960_720.jpg-->
+<!--https://cdn.pixabay.com/photo/2014/07/27/17/29/ironing-403074_960_720.jpg-->
 <div class="show-container">
-    <a id="prev" class="prev">&#10094;</a>
-    <img id="images" src="./assets/img/img1.jpg">
-    <a id="next" class="next">&#10095;</a>
+    <a id="prev" class="prev" (click)="prev()">&#10094;</a>
+    <img id="images" src={{currentImage}}>
+    <a id="next" class="next" (click)="next()">&#10095;</a>
 </div>
 <div class="top-products">
     <h1>Top Products</h1>

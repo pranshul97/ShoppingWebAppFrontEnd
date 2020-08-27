@@ -1,8 +1,11 @@
 <div class="topnav">
     <div>
         <a >Brands</a>
-        <div class="dropdown" *ngFor="let brand of brandsData">
-            <a (click)="fetchByBrand(brand)" >{{brand}}</a><br />
+        <div class="dropdown" >
+            <span *ngFor="let brand of brandsData">
+                <a (click)="fetchByBrand(brand)" >{{brand}}</a><br />
+            </span>
+            
         </div>
     </div>
     <div>
@@ -15,8 +18,10 @@
     </div>
     <div>
         <a >Categories</a>
-        <div class="dropdown" *ngFor="let cat of categoryData">
-            <a (click)="fetchProduct(cat)" >{{cat}}</a><br />
+        <div class="dropdown" >
+            <span *ngFor="let cat of categoryData">
+                <a (click)="fetchProduct(cat)" >{{cat}}</a><br />
+            </span>
         </div>
     </div>
     <div>
