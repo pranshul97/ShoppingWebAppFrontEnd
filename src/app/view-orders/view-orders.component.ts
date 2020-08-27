@@ -27,7 +27,7 @@ export class ViewOrdersComponent implements OnInit {
 
     this.viewOrdersService.viewOrderDetails(this.userId).subscribe(data=> {
         this.data=data;
-        this.result=this.data[0].id;
+        this.result=this.data[0];
 
       })
   }
