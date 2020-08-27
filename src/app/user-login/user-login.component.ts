@@ -23,14 +23,15 @@ export class UserLoginComponent  {
       if(data.status == 'SUCCESS'){
         let userId = data.userId;
         let userName = data.name;
-
+        alert(userId);
         sessionStorage.setItem('userId', userId.toString());
         sessionStorage.setItem('userName', String(userName));
-        this.router.navigate(['app-homepage']);
+        this.router.navigate(['/']);
 
       }
       else{
         this.message = data.message;
+        alert(this.message);
       }
 
     })
