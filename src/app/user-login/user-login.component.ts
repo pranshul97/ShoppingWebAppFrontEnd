@@ -26,6 +26,7 @@ export class UserLoginComponent  {
         alert(userId);
         sessionStorage.setItem('userId', userId.toString());
         sessionStorage.setItem('userName', String(userName));
+        window.location.reload();
         this.router.navigate(['/']);
 
       }

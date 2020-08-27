@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SearchProductsService } from '../search-products.service';
+import { CartDto } from '../display-all-products/CartDto';
 
 @Component({
   selector: 'app-brand-products',
@@ -20,6 +21,7 @@ export class BrandProductsComponent implements OnInit {
   price: PriceFilter=new PriceFilter();
   min: number;
   max: number;
+  cart: CartDto=new CartDto();
    ngOnInit(): void {
      alert("Hello");
      this.min=0;
@@ -126,6 +128,20 @@ export class BrandProductsComponent implements OnInit {
        this.brandsSelected=this.allBrands;
      }
    }
+
+   addToCart(productId: any){
+    if(sessionStorage.getItem("userId")==null){
+      alert("Please login to add a product");
+    }
+    else{
+      this.cart.productId=productId;
+      this.cart.userId=Number(sessionStorage.getItem("userId"));
+      alert("values adding");
+      this.service.insertDataInCart(this.cart).subscribe(data=>{
+        alert(JSON.stringify(data));
+      })
+    }
+  }
  }
  
  class PriceFilter{
