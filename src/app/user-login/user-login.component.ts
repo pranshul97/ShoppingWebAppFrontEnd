@@ -26,7 +26,6 @@ export class UserLoginComponent  {
 
         sessionStorage.setItem('userId', userId.toString());
         sessionStorage.setItem('userName', String(userName));
-       // alert(sessionStorage.getItem('userName'));
         this.router.navigate(['app-homepage']);
 
       }
