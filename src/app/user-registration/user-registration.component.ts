@@ -21,7 +21,7 @@ export class UserRegistrationComponent {
 
  register(){
     this.userService.register(this.user).subscribe(data=>{
-    // alert( JSON.stringify(data));
+    
       this.ls=data;
       if(this.ls.status == 'SUCCESS'){
         this.message="Registration Done Successfully!!";

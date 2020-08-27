@@ -18,12 +18,12 @@ export class UserLoginComponent  {
 
   loginuser(){
     this.userloginService.login(this.login).subscribe(data=>{
-         // (JSON.stringify(data));
+         
           
       if(data.status == 'SUCCESS'){
         let userId = data.userId;
         let userName = data.name;
-        alert(userId);
+       
         sessionStorage.setItem('userId', userId.toString());
         sessionStorage.setItem('userName', String(userName));
         window.location.reload();
