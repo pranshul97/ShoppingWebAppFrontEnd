@@ -1,5 +1,6 @@
 import { CartService } from './../cart.service';
 import { Component, OnInit } from '@angular/core';
+import { FetchProductByIdService } from '../fetch-product-by-id.service';
 
 @Component({
   selector: 'app-cart',
@@ -15,7 +16,9 @@ export class CartComponent implements OnInit {
   // list: number[] = [];
   map= new Map();
   quantity: number=1;
-  constructor(private cartService: CartService) { }
+  images=new Map();
+  img: any;
+  constructor(private cartService: CartService, private service: FetchProductByIdService) { }
 
   ngOnInit(): void {
     this.id=sessionStorage.getItem('userId');
@@ -31,6 +34,18 @@ export class CartComponent implements OnInit {
        this.map.set(pr.productId, this.quantity);
        this.totalPrice=this.totalPrice+pr.price;
         //alert(it);
+        this.service.fetchImagesById(pr.productId).subscribe(data =>{
+          this.img=data;
+          if(this.img.status=="SUCCESS"){
+            for(let item of this.img.list){
+              this.images.set(pr.productId,"http://localhost:8080/downloads/"+item);
+              break;
+            }
+          }
+          else{
+            this.images.set(pr.productId,"assets/img/img1.jpg");
+          }
+        })
       }
     })
   }

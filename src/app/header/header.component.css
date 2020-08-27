@@ -30,7 +30,7 @@
 
 .header img{
     float: left;
-    width: 10%;
+    width: 8%;
     height: 80px;
     margin-left: 5%;
 }
@@ -39,6 +39,7 @@
     border-radius: 20px;
     float: left;
     width: 60%;
+    margin-top:12px;
 }
 
 .searchbar::after{
