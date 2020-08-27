@@ -29,6 +29,8 @@ import { RetailerdetailsComponent } from './retailerdetails/retailerdetails.comp
 import { DeleteprofileComponent } from './deleteprofile/deleteprofile.component';
 import { BrandProductsComponent } from './brand-products/brand-products.component';
 import { AdminComponent } from './admin/admin.component';
+import { PaymentComponent } from './payment/payment.component';
+import { FinaldisplayComponent } from './finaldisplay/finaldisplay.component';
 
 
 
@@ -54,7 +56,9 @@ import { AdminComponent } from './admin/admin.component';
     DeleteprofileComponent,
     CartComponent,
     BrandProductsComponent,
-    AdminComponent
+    AdminComponent,
+    PaymentComponent,
+    FinaldisplayComponent
 
   ],
   imports: [
