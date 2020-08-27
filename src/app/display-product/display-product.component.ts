@@ -77,7 +77,8 @@ export class DisplayProductComponent implements OnInit {
       this.cart.userId=Number(sessionStorage.getItem("userId"));
       alert("values adding");
       this.service1.insertDataInCart(this.cart).subscribe(data=>{
-        alert(JSON.stringify(data));
+        //alert(JSON.stringify(data));
+        alert("Products added successfully")
       })
     }
   }

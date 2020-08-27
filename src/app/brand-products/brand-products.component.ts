@@ -23,7 +23,7 @@ export class BrandProductsComponent implements OnInit {
   max: number;
   cart: CartDto=new CartDto();
    ngOnInit(): void {
-     alert("Hello");
+     //alert("Hello");
      this.min=0;
      this.max=Number.MAX_VALUE;
      this.route.params.subscribe(
@@ -40,7 +40,7 @@ export class BrandProductsComponent implements OnInit {
          //alert(value);
          this.service.fetchProductsByBrandName(value).subscribe(data=>{
            this.data=data;
-           alert(JSON.stringify(data));
+           //alert(JSON.stringify(data));
            for(let item of this.data.list){
              if(!this.allCategories.includes(item.categoryName)){
                this.allCategories.push(item.categoryName);
@@ -59,7 +59,7 @@ export class BrandProductsComponent implements OnInit {
    }
  
    addToCompare(id: number){
-     alert(id);
+     //alert(id);
      this.compareArr.push(id);
    }
  
@@ -96,7 +96,7 @@ export class BrandProductsComponent implements OnInit {
          }
        }
      }
-     alert(this.brands);
+     //alert(this.brands);
    }
  
  
@@ -139,6 +139,7 @@ export class BrandProductsComponent implements OnInit {
       alert("values adding");
       this.service.insertDataInCart(this.cart).subscribe(data=>{
         alert(JSON.stringify(data));
+        //alert("Product added successfully");
       })
     }
   }

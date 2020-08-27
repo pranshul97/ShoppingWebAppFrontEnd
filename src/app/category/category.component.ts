@@ -25,7 +25,7 @@ export class CategoryComponent implements OnInit {
  max: number;
  cart: CartDto=new CartDto();
   ngOnInit(): void {
-    alert("Hello");
+    //alert("Hello");
     this.min=0;
     this.max=Number.MAX_VALUE;
     this.route.params.subscribe(
@@ -42,7 +42,7 @@ export class CategoryComponent implements OnInit {
         //alert(value);
         this.service.fetchProductByCategoryName(value).subscribe(data=>{
           this.data=data;
-          alert(JSON.stringify(data));
+          //alert(JSON.stringify(data));
           for(let item of this.data.list){
             if(!this.allCategories.includes(item.categoryName)){
               this.allCategories.push(item.categoryName);
@@ -83,7 +83,7 @@ export class CategoryComponent implements OnInit {
         }
       }
     }
-    alert(this.categories);
+    //alert(this.categories);
   }
 
   check1(event,dat: any){
@@ -98,7 +98,7 @@ export class CategoryComponent implements OnInit {
         }
       }
     }
-    alert(this.brands);
+    //alert(this.brands);
   }
 
 
@@ -138,7 +138,7 @@ export class CategoryComponent implements OnInit {
     else{
       this.cart.productId=productId;
       this.cart.userId=Number(sessionStorage.getItem("userId"));
-      alert("values adding");
+      //alert("values adding");
       this.service.insertDataInCart(this.cart).subscribe(data=>{
         alert(JSON.stringify(data));
       })
