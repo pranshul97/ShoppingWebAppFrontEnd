@@ -18,10 +18,16 @@
     opacity: 0.7; 
    }
 
-   .container p{
-     text-align: left;
-     
-   }
-  
-
+   .card {
+    background-color: white;
+    /* padding: 40px; */
+    margin-top: 40px;
+    overflow: hidden;
+    position: relative;
+    left: 350px;
+    bottom: 200px;
+    margin-right: 100px;
+    font-family: 'Baloo Tamma 2', cursive;
+    
+  }
   
