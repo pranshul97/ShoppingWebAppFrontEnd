@@ -1,6 +1,7 @@
 .topnav{
     /*background-color: #FFCE2B;*/
     margin-bottom: 5px;
+    font-weight: bold;
 }
 
 .topnav::after{

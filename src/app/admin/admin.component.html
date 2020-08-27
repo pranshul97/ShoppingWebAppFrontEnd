@@ -4,16 +4,15 @@
 
 
     <div id="buttons" style="width:80%">
-        <button class="bts" (click)="showProduct()"> Show Products </button>button>
-        <button class="bts" (click)="showRetailers()"> Show Retailers </button>button>
-        <button class="bts" (click)="showProductCategories()"> Show Categories </button>button>
+        <button class="bts" (click)="showProduct()"> Show Products </button>
+        <button class="bts" (click)="showRetailers()"> Show Retailers </button>
+        <button class="bts" (click)="showProductCategories()"> Show Categories </button>
     </div>
     <span *ngIf="productFlag">
         <div class="table">
-            <span *ngFor="let item in productList">
-                <table id="details">
-                    <th>Product Id</th><th>Product Name</th><th>Model</th><th>Brand Name</th><th>Price</th>
-                    <tr>
+            <table id="details">
+                <th>Product Id</th><th>Product Name</th><th>Model</th><th>Brand Name</th><th>Price</th>
+                    <tr *ngFor="let item of productList">
                         <td>{{item.productId}}</td>
                         <td>{{item.name}}</td>
                         <td>{{item.model}}</td>
@@ -21,36 +20,31 @@
                         <td>{{item.price}}</td>
                     </tr>
                 </table>
-            </span>
         </div>
     </span>
 
     <span *ngIf="retailerFlag">
         <div class="table">
-            <span *ngFor="let item in retailerList">
-                <table id="details">
-                    <th>Reatiler Id</th><th>Reatiler Name</th><th>Email</th><th>contactName</th>
-                    <tr>
+            <table id="details">
+                <th>Retailer Id</th><th>Retailer Name</th><th>Email</th><th>contactName</th>
+                    <tr *ngFor="let item of retailerList">
                         <td>{{item.retailerId}}</td>
                         <td>{{item.name}}</td>
                         <td>{{item.email}}</td>
                         <td>{{item.contactNumber}}</td>
                     </tr>
-                </table>
-            </span>
+            </table>
         </div>
     </span>
 
     <span *ngIf="categoryFlag">
         <div class="table">
-            <span *ngFor="let item in categoryList">
-                <table id="details">
-                    <th>Category Id</th><th>Category Name</th>
-                    <tr>
+            <table id="details">
+                <th>Category Id</th><th>Category Name</th>
+                    <tr *ngFor="let item of categoryList">
                         <td>{{item.categoryId}}</td>
                         <td>{{item.categoryName}}</td>
                     </tr>
-                </table>
-            </span>
+            </table>
         </div>
     </span>

@@ -20,6 +20,7 @@ import { CartComponent } from './cart/cart.component';
 import { PaymentComponent } from './payment/payment.component';
 import { FinaldisplayComponent } from './finaldisplay/finaldisplay.component';
 import { ViewOrdersComponent } from './view-orders/view-orders.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 const routes: Routes = [
@@ -42,7 +43,8 @@ const routes: Routes = [
   {path: 'app-cart', component: CartComponent},
   {path: 'app-payment', component: PaymentComponent},
   {path: 'app-finaldisplay', component: FinaldisplayComponent},
-  {path: 'app-view-orders', component: ViewOrdersComponent}
+  {path: 'app-view-orders', component: ViewOrdersComponent},
+  {path: 'app-admin', component: AdminComponent}
 
 ];
 
