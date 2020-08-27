@@ -23,6 +23,14 @@
         <a routerLink="/app-register">Retailer Registration</a>
     </div>
     <div>
-        <a routerLink="/app-user-registration">Register/Login</a>
+        <a routerLink="/app-user-registration" *ngIf="userName==null">Register/Login</a>
+        
+            <a *ngIf="userName!=null">{{userName}}</a>
+            <div class="dropdown">
+                <a  >View Cart</a><br />
+                <a  >View Orders</a><br />
+                <a  (click)="logout()">Logout</a>
+            </div>
+        
     </div>
 </div>

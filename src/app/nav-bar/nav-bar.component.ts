@@ -9,6 +9,7 @@ import { SearchProductsService } from '../search-products.service';
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent implements OnInit {
+  userName: any;
   categoryData: any;
   brandsData: any;
   constructor(private router: Router,private retailerService: RetailerService,private prodService: SearchProductsService) {
@@ -23,6 +24,13 @@ export class NavBarComponent implements OnInit {
       //alert(JSON.stringify(this.brandsData));
     })
 
+    if(sessionStorage.getItem("userName")!=null){
+      this.userName=sessionStorage.getItem("userName");
+      //location.reload();
+    }
+    else{
+      this.userName=null;
+    }
   }
   productId: any;
   seeproduct(productId: number){
@@ -38,5 +46,13 @@ export class NavBarComponent implements OnInit {
 
   fetchByBrand(brandName: any){
     this.router.navigate(['app-brand-products/'+brandName]);
+  }
+
+  logout(){
+    sessionStorage.clear();
+     sessionStorage.removeItem('userName');
+     sessionStorage.removeItem('userId');
+    this.userName=null;
+      this.router.navigate(['app-user-login'])
   }
 }
