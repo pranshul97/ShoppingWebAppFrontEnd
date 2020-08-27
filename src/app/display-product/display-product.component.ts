@@ -2,6 +2,8 @@ import { Component, OnInit, OnChanges } from '@angular/core';
 import { FetchProductByIdService } from '../fetch-product-by-id.service';
 import { Product} from './Product';
 import { ActivatedRoute } from '@angular/router';
+import { CartDto } from '../display-all-products/CartDto';
+import { SearchProductsService } from '../search-products.service';
 @Component({
   selector: 'app-display-product',
   templateUrl: './display-product.component.html',
@@ -15,7 +17,8 @@ export class DisplayProductComponent implements OnInit {
   images: any[]=[];
   img: any;
   currentImage: any;
-  constructor(private service: FetchProductByIdService,private route: ActivatedRoute) {
+  cart: CartDto=new CartDto();
+  constructor(private service: FetchProductByIdService,private route: ActivatedRoute,private service1: SearchProductsService) {
    }
   ngOnInit(): void {
     this.route.params.subscribe(
@@ -62,6 +65,20 @@ export class DisplayProductComponent implements OnInit {
     if(this.img.status=="SUCCESS"){
       this.index=(this.index+1)%(this.images.length);
       this.currentImage="http://localhost:8080/downloads/"+this.images[this.index];
+    }
+  }
+
+  addToCart(){
+    if(sessionStorage.getItem("userId")==null){
+      alert("Please login to add a product");
+    }
+    else{
+      this.cart.productId=this.product.productId;
+      this.cart.userId=Number(sessionStorage.getItem("userId"));
+      alert("values adding");
+      this.service1.insertDataInCart(this.cart).subscribe(data=>{
+        alert(JSON.stringify(data));
+      })
     }
   }
 }
