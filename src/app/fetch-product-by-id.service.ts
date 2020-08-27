@@ -12,5 +12,11 @@ export class FetchProductByIdService {
     let url='http://localhost:8080/fetchProduct?productId='+productId;
     return this.http.get(url);
   }
-  
+
+  fetchImagesById(productId: any){
+    let url='http://localhost:8080/getPicOfProduct?productId='+productId;
+    return this.http.get(url);
+  }
+
+
 }
