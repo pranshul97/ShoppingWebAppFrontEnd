@@ -33,7 +33,7 @@ export class AddproductComponent implements OnInit {
   }
 
   upload(){
-    alert(JSON.stringify(this.addProduct))
+    // alert(JSON.stringify(this.addProduct))
     let formData : FormData = new FormData();
     formData.append('retailerId', this.retailerId);
     formData.append('brandName', this.addProduct.brandName);
@@ -57,23 +57,16 @@ export class AddproductComponent implements OnInit {
     })
   }
 
-  fetchCategory(){
-    // this.retailerService.fetchCategory().subscribe(data => {
-    //   this.data = data;
-    //   for(let d of this.data){
-    //     alert(d);
-    //   }
-    // })
-  }
+  fetchCategory(){}
 
   productAdd(){
     this.productService.addProduct(this.addProduct).subscribe(
       data => {
-       alert(JSON.stringify(this.addProduct));
+      this.data = data;
       }
     )
-    this.message = "Retailer registered successfully";
-
+    this.message = "Retailer added product successfully";
+    alert(this.message);
 
   }
 

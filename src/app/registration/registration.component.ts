@@ -12,6 +12,7 @@ export class RegistrationComponent implements OnInit {
   retailer: Retailer = new Retailer();
 
   message: any;
+  data:any;
 
   constructor(private service: RetailerService) { }
 
@@ -21,10 +22,12 @@ export class RegistrationComponent implements OnInit {
   addRetailer(){
     this.service.addRetailer(this.retailer).subscribe(
       data => {
-       alert(JSON.stringify(this.retailer));
+      //  alert(JSON.stringify(this.retailer));
+      this.data = data;
       }
     )
     this.message = "Retailer registered successfully";
+    alert( "Retailer registered successfully")
   }
 
   
