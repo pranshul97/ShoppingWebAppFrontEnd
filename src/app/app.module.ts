@@ -32,6 +32,11 @@ import { AdminComponent } from './admin/admin.component';
 import { ViewOrdersComponent } from './view-orders/view-orders.component';
 
 
+import { PaymentComponent } from './payment/payment.component';
+import { FinaldisplayComponent } from './finaldisplay/finaldisplay.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -56,7 +61,9 @@ import { ViewOrdersComponent } from './view-orders/view-orders.component';
     CartComponent,
     BrandProductsComponent,
     AdminComponent,
-    ViewOrdersComponent
+    ViewOrdersComponent,
+    PaymentComponent,
+    FinaldisplayComponent
 
   ],
   imports: [

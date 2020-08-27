@@ -17,6 +17,8 @@ import { RetailerdetailsComponent } from './retailerdetails/retailerdetails.comp
 import { CategoryComponent } from './category/category.component';
 import { BrandProductsComponent } from './brand-products/brand-products.component';
 import { CartComponent } from './cart/cart.component';
+import { PaymentComponent } from './payment/payment.component';
+import { FinaldisplayComponent } from './finaldisplay/finaldisplay.component';
 
 
 const routes: Routes = [
@@ -36,7 +38,9 @@ const routes: Routes = [
   {path: 'app-retailerdetails', component: RetailerdetailsComponent},
   {path: 'app-category/:categoryName',component: CategoryComponent},
   {path:'app-brand-products/:brandName', component: BrandProductsComponent},
-  {path: 'app-cart', component: CartComponent}
+  {path: 'app-cart', component: CartComponent},
+  {path: 'app-payment', component: PaymentComponent},
+  {path: 'app-finaldisplay', component: FinaldisplayComponent}
 ];
 
 @NgModule({
