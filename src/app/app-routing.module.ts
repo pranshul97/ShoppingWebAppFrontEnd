@@ -16,6 +16,7 @@ import { DeleteprofileComponent } from './deleteprofile/deleteprofile.component'
 import { RetailerdetailsComponent } from './retailerdetails/retailerdetails.component';
 import { CategoryComponent } from './category/category.component';
 import { BrandProductsComponent } from './brand-products/brand-products.component';
+import { CartComponent } from './cart/cart.component';
 
 
 const routes: Routes = [
@@ -34,8 +35,8 @@ const routes: Routes = [
   {path: 'app-deleteprofile',component: DeleteprofileComponent},
   {path: 'app-retailerdetails', component: RetailerdetailsComponent},
   {path: 'app-category/:categoryName',component: CategoryComponent},
-  {path:'app-brand-products/:brandName', component: BrandProductsComponent}
-
+  {path:'app-brand-products/:brandName', component: BrandProductsComponent},
+  {path: 'app-cart', component: CartComponent}
 ];
 
 @NgModule({
