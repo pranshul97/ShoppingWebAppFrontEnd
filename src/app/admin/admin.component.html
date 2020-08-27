@@ -1,54 +1,56 @@
 <div id="adminprofile">
-    <p id="adminpara"> Admin' profile  </p>
+    <p id="adminpara"> Admin Dashboard </p>
 </div>
 
 
-    <div id="showProductButton">
+    <div id="Buttons">
         <button class="bts" (click)="showProduct()"> Show Products </button>button>
-    </div>
-    <div class="table">
-        <span *ngFor="let item in productList">
-            <table>
-                <th>Product Id</th><th>Product Name</th><th>Model</th><th>Brand Name</th><th>Price</th>
-                <tr>
-                    <td>{{item.productId}}</td>
-                    <td>{{item.name}}</td>
-                    <td>{{item.model}}</td>
-                    <td>{{item.brandName}}</td>
-                    <td>{{item.price}}</td>
-                </tr>
-            </table>
-        </span>
-    </div>
-
-    <div id="showRetailersButton">
         <button class="bts" (click)="showRetailers()"> Show Retailers </button>button>
-    </div>
-    <div class="table">
-        <span *ngFor="let item in retailerList">
-            <table>
-                <th>Reatiler Id</th><th>Reatiler Name</th><th>Email</th><th>contactName</th>
-                <tr>
-                    <td>{{item.retailerId}}</td>
-                    <td>{{item.name}}</td>
-                    <td>{{item.email}}</td>
-                    <td>{{item.contactNumber}}</td>
-                </tr>
-            </table>
-        </span>
-    </div>
-
-    <div id="showCategoriesButton">
         <button class="bts" (click)="showProductCategories()"> Show Categories </button>button>
     </div>
-    <div class="table">
-        <span *ngFor="let item in categoryList">
-            <table>
-                <th>Category Id</th><th>Category Name</th>
-                <tr>
-                    <td>{{item.categoryId}}</td>
-                    <td>{{item.categoryName}}</td>
-                </tr>
-            </table>
-        </span>
-    </div>
+    <span *ngIf="productFlag">
+        <div class="table">
+            <span *ngFor="let item in productList">
+                <table>
+                    <th>Product Id</th><th>Product Name</th><th>Model</th><th>Brand Name</th><th>Price</th>
+                    <tr>
+                        <td>{{item.productId}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.model}}</td>
+                        <td>{{item.brandName}}</td>
+                        <td>{{item.price}}</td>
+                    </tr>
+                </table>
+            </span>
+        </div>
+    </span>
+
+    <span *ngIf="retailerFlag">
+        <div class="table">
+            <span *ngFor="let item in retailerList">
+                <table>
+                    <th>Reatiler Id</th><th>Reatiler Name</th><th>Email</th><th>contactName</th>
+                    <tr>
+                        <td>{{item.retailerId}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.email}}</td>
+                        <td>{{item.contactNumber}}</td>
+                    </tr>
+                </table>
+            </span>
+        </div>
+    </span>
+
+    <span *ngIf="categoryFlag">
+        <div class="table">
+            <span *ngFor="let item in categoryList">
+                <table>
+                    <th>Category Id</th><th>Category Name</th>
+                    <tr>
+                        <td>{{item.categoryId}}</td>
+                        <td>{{item.categoryName}}</td>
+                    </tr>
+                </table>
+            </span>
+        </div>
+    </span>

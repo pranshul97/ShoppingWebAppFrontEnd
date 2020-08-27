@@ -13,12 +13,19 @@ export class AdminComponent implements OnInit {
   retailerList;
   categoryList;
 
+  productFlag: boolean=false;
+  retailerFlag: boolean=false;
+  categoryFlag: boolean=false;
+
   constructor(private adminService: AdminService) { }
 
   ngOnInit(): void {
   }
 
   showProduct(){
+    this.productFlag=true;
+    this.retailerFlag=false;
+    this.categoryFlag=false;
     this.adminService.showProductResultToAdmin().subscribe(data => {
       this.data=data;
       this.productList=this.data.list;
@@ -26,6 +33,9 @@ export class AdminComponent implements OnInit {
   }
 
   showRetailers(){
+    this.retailerFlag=true;
+    this.productFlag=false;
+    this.categoryFlag=false;
     this.adminService.showProductResultToAdmin().subscribe(data => {
       this.data=data;
       this.retailerList=this.data.rList;
@@ -33,6 +43,9 @@ export class AdminComponent implements OnInit {
   }
 
   showProductCategories(){
+    this.categoryFlag=true;
+    this.retailerFlag=false;
+    this.productFlag=false;
     this.adminService.showProductResultToAdmin().subscribe(data => {
       this.data=data;
       this.categoryList=this.data.cList;
