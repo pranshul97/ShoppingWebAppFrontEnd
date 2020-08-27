@@ -12,7 +12,9 @@ export class CartComponent implements OnInit {
   id: any;
   data: any;
   result;
-  list: number[] = [];
+  // list: number[] = [];
+  map = new Map();
+  quantity: number=1;
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
@@ -22,13 +24,17 @@ export class CartComponent implements OnInit {
       this.data=data;
       this.result=this.data.list;
       console.log(this.result);
-      this.list=this.result;
+      // this.list=this.result;
 
-      for(let pr of this.list){
-        this.totalPrice=this.totalPrice;
+      for(let pr of this.result){
+       this.map.set("pr.productId", this.quantity);
         //alert(it);
       }
     })
+  }
+
+  decreaseQuantity(){
+    this.quantity=this.quantity-1;
   }
 
     
