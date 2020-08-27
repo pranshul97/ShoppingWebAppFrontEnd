@@ -3,7 +3,7 @@
 width: 100%;
  height: 50px;
   position : relative ;
-  background-color :teal ;
+  background-color :#FFCE2B ;
   
   text-align: center;
   display: inline-block;
@@ -61,7 +61,7 @@ background-color: teal;
 #details th {
       padding-top: 12px;
       padding-bottom: 12px;
-      background-color: teal;
+      background-color: #FFCE2B;
       color: black;
       border: 1px solid #ddd;
 }
