@@ -15,11 +15,11 @@
                     </div>
                     <div class="part-quantity">
                         <div style="width: 30%;float: left;">
-                            <button id="minus" type="button" (click)="decreaseQuantity()">-</button>
+                            <button id="minus" type="button" (click)="decreaseQuantity(item.productId,item.price)">-</button>
                         </div>
-                        <h3 id="quantity">1</h3>
+                        <h3 id="quantity">{{map.get(item.productId)}}</h3>
                         <div style="width: 30%;float: left;">
-                            <button id="plus" type="button" (click)="increaseQuantity()">+</button>
+                            <button id="plus" type="button" (click)="increaseQuantity(item.productId,item.price)">+</button>
                         </div>
                     </div>
                 </div>

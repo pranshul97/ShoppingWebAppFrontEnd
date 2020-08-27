@@ -13,13 +13,14 @@ export class CartComponent implements OnInit {
   data: any;
   result;
   // list: number[] = [];
-  map = new Map();
+  map= new Map();
   quantity: number=1;
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
     this.id=sessionStorage.getItem('userId');
     this.id=Number(this.id);
+    this.totalPrice=0;
     this.cartService.cartProduct(this.id).subscribe(data => {
       this.data=data;
       this.result=this.data.list;
@@ -27,14 +28,23 @@ export class CartComponent implements OnInit {
       // this.list=this.result;
 
       for(let pr of this.result){
-       this.map.set("pr.productId", this.quantity);
+       this.map.set(pr.productId, this.quantity);
+       this.totalPrice=this.totalPrice+pr.price;
         //alert(it);
       }
     })
   }
 
-  decreaseQuantity(){
-    this.quantity=this.quantity-1;
+  decreaseQuantity(id: any,price: any){
+    if(this.map.get(id)>1){
+      this.map.set(id, this.map.get(id)-1);
+      this.totalPrice=this.totalPrice-Number(price);
+    }
+  }
+
+  increaseQuantity(id: any,price: any){
+    this.map.set(id, this.map.get(id)+1);
+    this.totalPrice=this.totalPrice+Number(price);
   }
 
     
